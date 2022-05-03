@@ -1,0 +1,31 @@
+.default-example {
+  font-size: 1.2rem;
+}
+
+#example-element {
+  width: 100%;
+
+  background: #f1f8ff30;
+}
+
+.output section {
+  flex-direction: column;
+
+  text-align: left;
+}
+
+.output hr {
+  width: 50%;
+  margin: .5em;
+
+  color: #d3d3d3;
+}
+
+.output .note {
+  font-size: .8rem;
+}
+
+@counter-style space-counter {
+  symbols: "\1F680""\1F6F8""\1F6F0""\1F52D";
+  suffix: " "
+}
