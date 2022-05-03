@@ -1,0 +1,106 @@
+<!--Min Width and Flexbox Issue-->
+<!-- https://codepen.io/shadeed/pen/398ccffcd437a2fb042f5ce3bdd68c57 -->
+<title>Min Width and Flexbox Issue</title>
+<script src="reset.css"></script>
+<style>
+  .wrapper {
+    max-width: 700px;
+    margin: auto;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .c-person {
+    min-width: 0;
+    flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #eee;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .c-person h3 {
+    flex-grow: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .c-person .c-link {
+    min-width: 120px;
+    margin-left: auto;
+    text-align: end;
+  }
+  .c-person:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .c-person__avatar {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+
+  .c-link svg {
+    vertical-align: middle;
+  }
+
+  body {
+    background: #fafafa;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+</style>
+<ul class="">
+  <li class="c-person">
+    <img class="c-person__avatar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/182774/shadeed_copy_copy.jpg" alt="">
+    <h3>AhmakdsodsdksosokokdoksdkosokdsokdoskokdsokdokodkseAhmakdsodsdksosokokdoksdkosokdsokdoskokdsokdokodksedd</h3>
+    <a href="#" class="c-link">
+      <span>View more</span>
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+      </svg>
+    </a>
+  </li>
+  <li class="c-person">
+    <img class="c-person__avatar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/182774/shadeed_copy_copy.jpg" alt="">
+    <h3>Ahmad Shadeed</h3>
+    <a href="#" class="c-link">
+      <span>View more</span>
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+      </svg>
+    </a>
+  </li>
+  <li class="c-person">
+    <img class="c-person__avatar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/182774/shadeed_copy_copy.jpg" alt="">
+    <h3>Ahmad Shadeed</h3>
+    <a href="#" class="c-link">
+      <span>View more</span>
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+      </svg>
+    </a>
+  </li>
+  <li class="c-person">
+    <img class="c-person__avatar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/182774/shadeed_copy_copy.jpg" alt="">
+    <h3>Ahmad Shadeed</h3>
+    <a href="#" class="c-link">
+      <span>View more</span>
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+      </svg>
+    </a>
+  </li>
+</ul>

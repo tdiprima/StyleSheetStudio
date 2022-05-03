@@ -1,0 +1,56 @@
+<!--Max Width Modal-->
+<!-- https://codepen.io/shadeed/pen/5dcb1c4c6773cc3a97a766c327c36443 -->
+<title>Max Width Modal</title>
+<link rel="stylesheet" href="reset.css">
+<style>
+  .wrapper {
+    max-width: 700px;
+    margin: auto;
+  }
+
+  .c-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .c-modal__body {
+    margin: auto 16px 24px;
+    max-width: 500px;
+    padding: 1rem;
+    border-radius: 7px;
+    background: #e2deed;
+  }
+  .c-modal__body h2 {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  @media (min-width: 500px) {
+    .c-modal__body {
+      margin: auto;
+    }
+  }
+
+  body {
+    background: #fafafa;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+</style>
+<div class="c-modal">
+  <div class="c-modal__body">
+    <h2>Modal Title</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi vitae in ducimus mollitia ad eum enim hic nemo
+      aspernatur. Cumque earum animi nesciunt reiciendis distinctio nihil delectus alias, at doloremque.</p>
+  </div>
+</div>

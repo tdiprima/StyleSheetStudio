@@ -1,0 +1,58 @@
+<!--Min Width - Use case 1-->
+<!--https://codepen.io/shadeed/pen/320e42b7ad75c438a9e633417d737d16-->
+<title>Min Width - Use case 1</title>
+<link rel="stylesheet" href="reset.css">
+<style>
+  .wrapper {
+    max-width: 700px;
+    margin: auto;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    /*display: inline-block;*/
+    margin-bottom: 0.7rem;
+    margin-right: 0.7rem;
+  }
+
+  .c-tag {
+    display: inline-block;
+    background: #755ac3;
+    min-width: 100px;
+    max-width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0.35rem 1rem;
+    color: #fff;
+    border-radius: 100px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  body {
+    background: #fafafa;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4rem;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+</style>
+<ul class="wrapper">
+  <li><a href="#" class="c-tag">Design</a></li>
+  <li><a href="#" class="c-tag">Development</a></li>
+  <li><a href="#" class="c-tag">CSS</a></li>
+  <li><a href="#" class="c-tag">Code</a></li>
+  <li><a href="#" class="c-tag">Drawing</a></li>
+  <li><a href="#" class="c-tag">User Experience Design Design Design Design</a></li>
+  <li><a href="#" class="c-tag">Service Workers</a></li>
+  <li><a href="#" class="c-tag">Performance</a></li>
+</ul>

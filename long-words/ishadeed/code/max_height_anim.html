@@ -1,0 +1,115 @@
+<!--Max Height Animation-->
+<!--https://codepen.io/shadeed/pen/164c7ef67f5d4541bddb8bc12b2772da-->
+<title>Max Height Animation</title>
+<!--<link rel="stylesheet" href="diagnostic.css">-->
+<link rel="stylesheet" href="reset.css"><!--This takes the bullet points off the UL-->
+<style>
+  .wrapper {
+    max-width: 700px;
+    margin: auto;
+  }
+
+  header {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background: #e2deed;
+    padding: 1rem;
+    border-radius: 7px;
+  }
+  header h1 {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  header button {
+    display: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    color: #fff;
+    background: #9b8fbb;
+    font-size: 16px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+  }
+  @media (max-width: 450px) {
+    header button {
+      display: block;
+    }
+  }
+
+  .c-nav {
+    display: flex;
+  }
+  @media (max-width: 450px) {
+    .c-nav {
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      background: #9181bc;
+      border-radius: 5px;
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.3s linear;
+    }
+    .c-nav li {
+      display: block;
+    }
+    .c-nav a {
+      display: block;
+      color: #e0d9f4;
+      padding: 0.5rem 1rem;
+    }
+    .c-nav.is-active {
+      max-height: 22rem;
+    }
+  }
+  .c-nav li {
+    margin-right: 1rem;
+  }
+  .c-nav a {
+    text-decoration: none;
+    color: #222;
+  }
+
+  body {
+    background: #fafafa;
+    line-height: 1.5;
+    font-family: "Arial";
+    padding: 1rem;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+</style>
+
+<div class="wrapper">
+  <header>
+    <h1>Logo</h1>
+    <nav>
+      <button>Menu</button>
+      <ul class="c-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Works</a></li>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">Hire Me</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+
+<script>
+  let toggleMenu = document.querySelector('button');
+  let navElm = document.querySelector('.c-nav');
+
+  toggleMenu.addEventListener('click', function () {
+    navElm.classList.toggle('is-active');
+  });
+</script>

@@ -1,0 +1,22 @@
+<!--Fluid Ratio with Max Height/Width-->
+<!-- https://codepen.io/shadeed/pen/a41b53e58d53106d7d4aef176c8757e2 -->
+<title>Fluid Ratio with Max Height/Width</title>
+<script src="reset.css"></script>
+<style>
+  /*Forked from https://codepen.io/mirisuzanne/pen/XRPzvY?editors=0100*/
+  img {
+    --ratio: 664 / 1000;
+    --container-width: 30em;
+
+    display: block;
+    height: calc(100vw * var(--ratio));
+    max-height: calc(var(--container-width) * var(--ratio));
+    width: 100%;
+    max-width: var(--container-width);
+
+    background: #000;
+
+    margin: 1rem auto;
+  }
+</style>
+<img alt="cheesecake" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/182774/blueberry-cheesecake.jpg">

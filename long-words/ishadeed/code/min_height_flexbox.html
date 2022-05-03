@@ -1,0 +1,56 @@
+<!--Min Height and Flexbox Issue-->
+<!--https://codepen.io/shadeed/pen/dea75b84b1fcfd03e5c21173a40afc20?editors=0100-->
+<title>Min Height and Flexbox Issue</title>
+<script src="reset.css"></script>
+<style>
+  .wrapper {
+    max-width: 700px;
+    margin: auto;
+  }
+
+  .c-panel {
+    display: flex;
+    flex-direction: column;
+    background: #eee;
+    height: 180px;
+  }
+
+  .c-panel__title {
+    padding: 1rem;
+    background: #ccc;
+    font-weight: bold;
+  }
+
+  .c-panel__body {
+    padding: 1rem;
+    min-height: 0;
+  }
+
+  .c-panel__content {
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+
+  body {
+    background: #fafafa;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+</style>
+<div class="wrapper">
+  <div class="c-panel">
+    <h2 class="c-panel__title">Title should be there</h2>
+    <div class="c-panel__body">
+      <div class="c-panel__content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam libero maxime esse ipsam commodi eius accusantium quasi enim id, totam modi voluptate tempore maiores fugiat officia minus labore magnam sit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam libero maxime esse ipsam commodi eius accusantium quasi enim id, totam modi voluptate tempore maiores fugiat officia minus labore magnam sit.</p>
+      </div>
+    </div>
+  </div>
+</div>
