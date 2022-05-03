@@ -1,0 +1,58 @@
+<!-- https://stackoverflow.com/questions/17656623/position-absolute-scrolling -->
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .container {
+    position: relative; /* They kept it. It's not all or nothing.*/
+    float: left;
+    overflow: auto;
+    width: 256px;
+    height: 256px;
+    margin-right: 16px;
+    border: solid 1px red;
+  }
+
+  .full-height {
+    position: absolute;
+    top: 0;
+    right: 128px;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    background: blue;
+  }
+
+  .inner {
+    position: relative;
+    height: auto;
+  }
+
+  body {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+    font-size: larger;
+    margin: 30px;
+  }
+</style>
+
+<script src="loremIpsumBullshit.js"></script>
+
+<p>
+  Setting the inner div's position to <code>relative</code>.
+  Makes the absolutely position elements inside of it.
+  Base their position and height on it.
+  Rather than on the <code>.container</code> div, which has a fixed height.
+  <br><br>
+  Without the inner, relatively positioned <code>div</code>,
+  the <code>.full-height</code> div will always.
+  Calculate its dimensions and position.
+  Based on <code>.container</code>.
+</p>
+
+<div class="container">
+  <div class="inner">
+    <div class="full-height"></div>
+    <script>loremIpsumBullshit()</script>
+  </div>
+</div>

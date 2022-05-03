@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Z-Index Explained</title>
+
+  <!-- https://www.freecodecamp.org/news/z-index-explained-how-to-stack-elements-using-css-7c5aa0f179b3/ -->
+
+  <!-- https://www.freecodecamp.org/news/z-index-in-css-what-it-is-and-what-it-does -->
+
+  <style>
+    .pink {
+      background: rgb(239, 71, 111);
+    }
+
+    .blue {
+      background: rgb(17, 138, 178);
+    }
+
+    .green {
+      z-index: 100;
+
+      background: rgb(6, 214, 160);
+      /* has no effect */
+    }
+
+    .orange {
+      background: rgb(255, 209, 102);
+    }
+
+    .purple {
+      background: rgb(139, 91, 211);
+    }
+
+    div {
+      /* color: white; */
+      font-family: 'Courier New', Courier, monospace;
+
+      box-sizing: border-box;
+      width: 150px;
+      height: 150px;
+      padding: 5px;
+
+      text-align: right;
+    }
+  </style>
+  <!-- <link rel="stylesheet" href="default.css"> -->
+  <!-- <link rel="stylesheet" href="stacking.css"> -->
+  <!-- <link rel="stylesheet" href="new-stacking.css"> -->
+  <!-- <link rel="stylesheet" href="multi-child.css"> -->
+  <!-- <link rel="stylesheet" href="props.css"> -->
+</head>
+
+<body>
+
+  <div class="pink positioned">
+    Positioned
+    <div class="orange positioned">Positioned</div>
+  </div>
+
+  <div class="purple positioned">Positioned</div>
+
+  <div class="blue positioned">Positioned</div>
+
+  <div class="green non-positioned">Non-positioned</div>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Difference between css position absolute versus relative</title>
+  <!-- https://leannezhang.medium.com/difference-between-css-position-absolute-versus-relative-35f064384c6 -->
+  <style>
+    body {
+      font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+      margin: 30px;
+    }
+
+    .parent {
+      display: inline-block; /* Well, that's the magic for side-by-side, init? */
+      border: 2px black dotted;
+    }
+
+    .box {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background: lightskyblue;
+    }
+
+    .green {
+      background: mediumspringgreen;
+    }
+
+    .two {
+      position: relative;
+      top: 20px;
+      left: 20px;
+    }
+
+    .tooty-too {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <p>Default positioning is top -> down.</p>
+  <div id="parent">
+    <div>asdf</div>
+    <div>asdf</div>
+    <div>asdf</div>
+    <div>asdf</div>
+  </div>
+
+  <p>Side-by-side: inline-block</p>
+  <div class="parent">
+    <div class="box" id="one">One</div>
+    <div class="box green" id="two">Two</div>
+    <div class="box" id="three">Three</div>
+    <div class="box" id="four">Four</div>
+  </div>
+
+  <p>Move the green box without affecting anything else. That's <code>relative</code>.</p>
+  <div class="parent">
+    <div class="box">One</div>
+    <div class="box green two">Two</div>
+    <div class="box">Three</div>
+    <div class="box">Four</div>
+  </div>
+
+  <p>Move the green box, period.  That's <code>absolute</code>.</p>
+  <div class="parent">
+    <div class="box">One</div>
+    <div class="box green tooty-too">Two</div>
+    <div class="box">Three</div>
+    <div class="box">Four</div>
+  </div>
+
+<p>
+  "The position of the <span class="green">Green Box</span> is based on its parent position (the dotted border).<br>
+  Thus, moving 20px to the left and bottom from the top-left origin of the dotted border."<br>
+  <h3>False!</h3>
+  I have more than 1 thing on the page, so it's easy to see that it's relative to the window.<br>
+  <em>That's</em> why <code>absolute</code> is so confusing!
+</p>
+
+<p>
+  See: <a href="https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/#aa-relative">css-tricks</a>
+</p>
+
+</body>
+</html>

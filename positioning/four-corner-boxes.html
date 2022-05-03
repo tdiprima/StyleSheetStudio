@@ -1,0 +1,121 @@
+<title>Using Position Absolute Inside A Scrolling Overflow Container</title>
+<!-- This guy can NOT write! >:( -->
+<!-- https://www.bennadel.com/blog/3409-using-position-absolute-inside-a-scrolling-overflow-container.htm -->
+<style>
+  div.viewport {
+    overflow: auto;
+    box-sizing: border-box;
+    width: 500px;
+    height: 300px;
+    border: 5px solid #ccc;
+  }
+
+  span.box {
+    position: absolute;
+    padding: 7px 15px 7px 15px;
+    color: #00f;
+    background-color: aquamarine;
+    /* fluorescent-hotpink: #f36; */
+  }
+
+  span.tl {
+    top: 0;
+    left: 0;
+  }
+
+  span.tr {
+    top: 0;
+    right: 0;
+  }
+
+  span.bl {
+    bottom: 0;
+    left: 0;
+  }
+
+  span.br {
+    bottom: 0;
+    right: 0;
+  }
+
+  body {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+    margin: 30px;
+    /*text-align: center;*/
+  }
+</style>
+
+<script>
+  function yay() {
+    for (let i = 1; i <= 16; i++) {
+      document.writeln("<p>Yay, content!</p>")
+    }
+  }
+</script>
+
+<h2>
+  What not to do
+</h2>
+
+<style>
+  div.viewport-a {
+    position: relative;
+    padding: 5px 15px 5px 15px;
+
+    /*
+      I'm using the overflow container as the position anchor.
+      This caused the absolutely positioned elements
+      to anchor to the actual viewport of the container.
+    */
+  }
+</style>
+
+<div class="viewport viewport-a">
+
+  <span class="box tl">Top Left</span>
+  <span class="box tr">Top Right</span>
+  <span class="box bl">Bottom Left</span>
+  <span class="box br">Bottom Right</span>
+
+  <script>yay()</script>
+
+</div>
+
+<!-- ---------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------- -->
+
+<h2>
+  Do it. :)
+</h2>
+
+<style>
+  div.viewport-b {
+    padding: 0 0 0 0;
+  }
+
+  /*
+    I'm wrapping the content in an extra container.
+    This allows the absolutely positioned elements
+    to anchor to the bounding box of the content,
+    not the viewport.
+  */
+
+  div.content-wrapper {
+    position: relative;
+    padding: 5px 15px 5px 15px;
+  }
+</style>
+
+<div class="viewport viewport-b">
+
+  <div class="content-wrapper">
+
+    <span class="box tl">Top Left</span>
+    <span class="box tr">Top Right</span>
+    <span class="box bl">Bottom Left</span>
+    <span class="box br">Bottom Right</span>
+
+    <script>yay()</script>
+
+  </div>
+</div>
