@@ -1,0 +1,71 @@
+/*https://9elements.com/css-rule-order/*/
+/*HOW TO ORGANIZE CSS @ 9ELEMENTS*/
+
+.selector {
+  /*SASS INHERITANCE*/
+  /*@extend*/
+  /*@mixin, e.g. clearfix*/
+
+  /*GENERATED CONTENT*/
+  /*https://developer.mozilla.org/en-US/docs/Web/CSS/content*/
+  content: linear-gradient(#e66465, #9198e5);
+
+  /*POSITION AND LAYOUT*/
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /*Flexbox properties*/
+  float: left;
+  /*clear*/
+
+  /*DISPLAY AND VISIBILITY*/
+  display: inline-block;
+  /*opacity*/
+  /*transform*/
+
+  /*CLIPPING*/
+  overflow: hidden;
+  /*clip*/
+
+  /*ANIMATION*/
+  animation: ease-in-out;
+  transition: 0.3s;
+
+  /*BOX MODEL (FROM OUTSIDE IN)*/
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 15px;
+  border: 10px solid #333;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+
+  /*BACKGROUND*/
+  background: #000;
+  cursor: pointer;
+
+  /*TYPOGRAPHY*/
+  font-size: 16px;
+  line-height: 1.4;
+  font-family: sans-serif;
+  /*font-weight*/
+  /*font-style*/
+  text-align: right;
+  /*text-transform*/
+  /*word-spacing*/
+  color: #fff;
+
+  /*PSEUDO-CLASSES & PSEUDO-ELEMENTS (NESTED RULES)*/
+  /*:hover*/
+  /*:focus*/
+  /*:active*/
+  /*:before*/
+  /*:after*/
+  /*:first-child*/
+  /*:last-child*/
+}
