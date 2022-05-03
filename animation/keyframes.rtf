@@ -1,0 +1,88 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 Charter-Roman;\f2\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red43\green49\blue44;\red244\green255\blue244;\red0\green0\blue0;
+}
+{\*\expandedcolortbl;;\cssrgb\c21961\c25098\c22745;\cssrgb\c96471\c100000\c96471;\cssrgb\c0\c0\c0;
+}
+\margl1440\margr1440\vieww20820\viewh12600\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs64 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 What are CSS Keyframes?\
+\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes"}}{\fldrslt 
+\f1\b0\fs40 \AppleTypeServices \cf2 \cb3 \ul \ulc2 \strokec2 Keyframes}}
+\f1\b0\fs40 \AppleTypeServices \cf2 \cb3 \strokec2 \'a0in CSS give us a way to define how our animations behave. They are used along with the\'a0{\field{\*\fldinst{HYPERLINK "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations"}}{\fldrslt \ul animations}}\'a0properties to describe what our elements will do, and help us to really fine tune them. And the best part is they\'92re easy to use!\
+If you\'92ve used the transition property in CSS, you may have wished you could tweak the animations a little more. Keyframes allow you to easily define individual points of action for an animation. This means instead of just describing the overall action you want to take place, you can describe different parts of that action, and change behavior from one action to the next.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \cb1 \strokec4 @keyframes move \{\
+    from \{\
+        transform: translateX(0px);\
+    \}\
+    to \{\
+        transform: translateX(120px);\
+    \}\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs40 \cf2 \cb3 \strokec2 In its most basic form, you can just define a keyframe as a simple translate from one spot to another. Here, I\'92ve named this keyframe \'93move\'94, but you can name it whatever is appropriate for your situation. The \'93from\'94 is just setting where our animation will start, \'93to\'94 is telling us where it will end. Here the element starts at its original location, and moves 120px on the X axis, or to the right.\
+But for more control, you can specify the percentage of the animation\'92s lifecycle you want the action to occur at, and the different properties you want to change. For instance, if you wanted to make a ghost bat, swinging from beyond the grave, the keyframe might look something like this:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \cb1 \strokec4 @keyframes swing \{\
+    0%\{opacity: 0;\}\
+    12%\{transform: rotateZ(-10deg) rotateX(10deg); opacity: 0\}\
+    25%\{transform: rotateZ(-21deg) rotateX(21deg); opacity: 0\}\
+    36%\{transform: rotateZ(-33deg) rotateX(33deg); opacity: .1\}\
+    50%\{transform: rotateZ(-45deg) rotateX(45deg); opacity: .2\}\
+    62%\{transform: rotateZ(-58deg) rotateX(58deg); opacity: .4\}\
+    75%\{transform: rotateZ(-71deg) rotateX(71deg); opacity: .6\}\
+    87%\{transform: rotateZ(-83deg) rotateX(83deg); opacity: .8\}\
+    100%\{transform: rotateZ(-90deg) rotateX(90deg); opacity: 1\}\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs40 \cf2 \cb3 \strokec2 The element changes at the percentages we specify. The element we apply this keyframe to will gain the opacity we want, and rotate exactly how much we want, precisely when we want. Now we just have to apply the keyframes to our elements, and animate them. For our swinging bat, this could look like this\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \cb1 \strokec4 .bat\{\
+    transform-origin: 10px 200px;\
+    animation-name: swing;\
+    animation-timing-function: linear;\
+    animation-duration: 2s;\
+    animation-delay: 1s;\
+    animation-direction: alternate;\
+    animation-iteration-count: infinite;\
+    animation-fill-mode: both;\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs40 \cf2 \cb3 \strokec2 In this example, transform origin is just moving the anchor point for rotation, so our bat swings from its end and not its center. Our animation properties are what move our element.\
+Here we attach our \'93swing\'94 keyframe to our element with animation-name. With timing-function, we can specify whether the animation changes speeds across its lifecycle. We set the duration of the animation, and the delay before it starts. With direction we can specify whether the animation runs in the normal direction from 0%-100% (from-to), or in reverse, or we can even have it alternate between normal and reverse. Iteration-count declares how many times the animation will run. Fill mode will let you keep an element at its starting and/or ending position, before or after the animation has run. This last one is very important, as once an animation is done, the element would otherwise default back to its original position\
+We can even use shorthand to make our animation properties much cleaner. With the animation property, you can specify all these properties in one place.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \cb1 \strokec4 .bat\{\
+    transform-origin: 10px 200px;\
+    animation: swing 2s 1s infinite linear alternate;\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs40 \cf2 \cb3 \strokec2 Much better. And our reusability is looking great as well. We can apply the keyframes to multiple elements, and then change each individual elements\'92 behavior with the animation properties assigned to them.\
+Keyframes can be a very handy tool for animation, and are a lot of fun to mess around with. I highly recommend spending some time building them and exploring all the different animation options.\
+\
+\
+https://jwood206.medium.com/what-are-css-keyframes-f6d7f7744f9f}
