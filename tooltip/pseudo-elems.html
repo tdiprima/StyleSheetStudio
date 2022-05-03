@@ -1,0 +1,42 @@
+<title>Pseudo Elements</title>
+<!-- https://youtu.be/OtBpgtqrjyo -->
+<link rel="stylesheet" href="tooltip.css">
+<style>
+  body, button, input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+  }
+
+  /* `example` class, `before` element */
+  .example::before {
+    /* content: attr(); pseudos need content */
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+  }
+
+  /* after */
+  .example::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+  }
+
+  /* You can only have pseudo-elements on things that have content. */
+  /* Rule of thumb: if it's a self-closing tag, it can't have a pseudo :) */
+
+  .required::after {
+    content: '*';
+    /* `after` adds things to the end */
+  }
+</style>
+
+<div class="example">Sulu the Handsome Chow</div>
+<p>&nbsp;</p>
+<label class="required">Name</label>
+<input required type="text">
+<button data-tooltip="Tooltip">Submit Form</button>

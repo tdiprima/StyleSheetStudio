@@ -1,0 +1,21 @@
+<title>Display tooltip without javascript/Jquery using css3</title>
+<!-- https://codepen.io/ameyraut/pen/EqbrZN -->
+<!-- http://ameyraut.com/display-tooltip-without-javascript-or-jquery-pure-css/ -->
+<link rel="stylesheet" href="tooltip1.css">
+<style>
+  .container {
+    padding: 30px;
+  }
+</style>
+
+<div class="container">
+  Content is displayed using <code>content: attr(data-tooltip);</code><br>
+  To position the tooltip above element, <code>position: absolute;</code> and <code>transform: translate(-50%,
+  -100%);</code> is used.
+  <br>
+  <h3>This is a <a class="css-tooltip" data-tooltip="This is sample tooltip" href="">tooltip</a> sentence</h3>
+  <br>
+  <button class="css-tooltip" data-tooltip="this is sample tooltip">
+    Tooltip button
+  </button>
+</div>

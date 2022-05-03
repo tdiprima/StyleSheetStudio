@@ -1,0 +1,40 @@
+/*This is sample tooltip*/
+
+.css-tooltip {
+  position: relative; /* relative to the button */
+}
+
+/* we add an `after` element */
+/* make it show up on hover */
+.css-tooltip:hover:after {
+  content: attr(data-tooltip); /* the actual content */
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  display: inline-block;
+  transform: translate(-50%, -100%); /* tooltip on top */
+  margin: 0 auto;
+  border-radius: 3px;
+  min-width: 150px;
+  padding: 5px;
+  background: #000;
+  font-size: 0.825rem;
+  text-align: center;
+  color: #fff;
+}
+
+/* The little triangle underneath the tooltip */
+.css-tooltip:hover:before {
+  content: " ";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate() */
+  /* transform: translate(0, 0px); */
+  margin-left: -5px;
+  border: 5px solid rgba(0, 0, 0, 0);
+  border-top-color: #000;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}

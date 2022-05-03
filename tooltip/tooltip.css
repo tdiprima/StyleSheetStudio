@@ -1,0 +1,19 @@
+/* Sulu the Handsome Chow */
+
+/* this is how you select an attribute [] */
+[data-tooltip] {
+  position: relative; /* relative to the button */
+}
+
+/* we add an `after` element */
+/* make it show up on hover */
+[data-tooltip]:hover::after {
+  content: attr(data-tooltip); /* the actual content */
+  position: absolute;
+  top: 100%; /* means: all the way underneath */
+  left: 0; /* line it up with the button */
+  right: 0;
+  margin-top: 5px;
+  padding: 5px; /* padding around the content (height of tooltip) */
+  background-color: blue;
+}
