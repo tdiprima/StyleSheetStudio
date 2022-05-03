@@ -1,0 +1,21 @@
+/* https://css-tricks.com/when-using-important-is-the-right-choice/#aa-potentially-good-use-case-utility-classes */
+
+/* To make your button class super robust and not easily trifled with, put !important rules on the values. */
+
+/* And maybe even add in a few that your button doesn't need but could screw it up. */
+
+.button {
+  padding: 3px !important;
+
+  /* For good measure */
+  text-decoration: none !important;
+
+  color: white !important;
+  border: 1px solid black !important;
+  border-radius: 5px !important;
+  background: red !important;
+}
+
+#content {
+  border-bottom: 1px dotted blue;
+}

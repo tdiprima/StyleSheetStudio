@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>building a Multi-language website</title>
+  <!-- https://css-tricks.com/when-using-important-is-the-right-choice/#comment-94652 -->
+
+</head>
+<style>
+  body {
+    background: green;
+  }
+
+  html[lang='ar'] body {
+    background: red;
+  }
+
+  @media print {
+    body {
+      background: #fff !important;
+    }
+  }
+</style>
+
+<body>
+  <h2>building a Multi-language website</h2>
+  <h2>بناء موقع متعدد اللغات</h2>
+</body>
+
+</html>

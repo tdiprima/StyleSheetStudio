@@ -1,0 +1,15 @@
+<title>!important beats specificity</title>
+
+<!-- https://css-tricks.com/when-using-important-is-the-right-choice/ -->
+
+<style>
+  p {
+    color: red !important;
+  }
+
+  #thing {
+    color: green;
+  }
+</style>
+<p id="thing">Will be RED.</p>
+

@@ -1,0 +1,6 @@
+/* https://css-tricks.com/when-using-important-is-the-right-choice/#comment-94659 */
+
+body {
+  overflow: auto !important; /* for all other browsers, the !important is for IE9 */
+  overflow: hidden\9; /* for IE<9 */
+}

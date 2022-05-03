@@ -1,0 +1,25 @@
+<title>utility class</title>
+
+<!-- https://css-tricks.com/when-using-important-is-the-right-choice/#aa-potentially-good-use-case-utility-classes -->
+
+<!-- https://css-tricks.com/specifics-on-css-specificity/ -->
+
+<style>
+  .button {
+    padding: 3px;
+
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: red;
+  }
+
+  #content a {
+    border-bottom: 1px dotted blue;
+  }
+</style>
+<a class="button" href="#">Do Thing</a>
+
+<section id="content">
+  <p>text text blah <a href="#" class="button">Do Thing</a></p>
+</section>
