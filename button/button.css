@@ -1,0 +1,127 @@
+/* Basic Styles */
+button {
+  margin-bottom: 3em;
+}
+
+.button-basic {
+  background-color: #4b5052;
+  border: 2px solid black;
+  color: whitesmoke;
+  padding: 1em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+  display: inline-block;
+  width: 22%;
+  /* to test the test-align property */
+}
+
+.button-basic-1 {
+  background-color: aqua;
+  color: blueviolet;
+  text-align: right;
+}
+
+.button-basic-2 {
+  border: 5px solid pink;
+  padding: 1.5em 2.25em;
+}
+
+.button-basic-3 {
+  font-size: 1.25em;
+  text-decoration: overline underline yellow wavy;
+  text-align: left;
+}
+
+/* Additional Styles  */
+.button-container {
+  background-image: linear-gradient(to right, #0c0c86, #02046b);
+  /* direction, start color, end color */
+  padding: 1.5em;
+}
+
+.button-fancy {
+  background-color: #23b83c;
+  border: 2px solid #020353;
+  color: whitesmoke;
+  padding: 1em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+  display: inline-block;
+  width: 22%;
+  border-radius: 5px;
+  box-shadow: 3px 3px 8px 0 #000;
+  /* h-offset v-offset blur spread color */
+}
+
+.button-fancy:first-of-type {
+  border: 4px solid #000;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+  background-color: #FFF;
+  color: black;
+}
+
+.button-fancy-1 {
+  border: 2px solid #FFF;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  background-color: #000;
+  color: #FFF;
+}
+
+.button-fancy-2:hover {
+  opacity: 0.10;
+  /* perception of emptiness */
+  background-color: #cbff52;
+  color: #626254;
+  cursor: grab;
+}
+
+.button-fancy-2:active {
+  opacity: 0.25;
+  background-color: #ff5852;
+  color: #f8f8e7;
+  cursor: grabbing;
+}
+
+.button-fancy-3 {
+  background-color: #cef61c;
+  color: #000;
+  font-style: italic;
+  border-radius: 2.5em;
+}
+
+.button-fancy-3:hover,
+.button-fancy-3:focus {
+  background-image: radial-gradient(circle at center, red 0, green 30%, blue 45%, yellow);
+  outline: 1px solid rgba(255, 255, 255, 0);
+}
+
+.button-fancy-3:hover span,
+.button-fancy-3:focus span {
+  display: none;
+}
+
+.button-fancy-3:hover:before,
+.button-fancy-3:focus:before {
+  content: "\1F60B";
+  /* Inserting an Unicode Character in the CSS */
+  font-style: normal;
+
+}
+
+input[type=radio],
+input[type=radio]:checked {
+  opacity: 0;
+}
+
+label {
+  filter: grayscale(100%);
+}
+
+input[type=radio]:hover + label,
+input[type=radio]:checked + label {
+  filter: grayscale(0);
+}

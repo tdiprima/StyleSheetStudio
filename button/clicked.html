@@ -1,0 +1,30 @@
+<title>How to style a clicked button in CSS</title>
+<!-- https://stackoverflow.com/questions/44263892/how-to-style-a-clicked-button-in-css/44264124 -->
+<h1>How to style a clicked button in CSS</h1>
+
+<p>toggle the styling:</p>
+
+<style>
+  input {
+    display: none;
+  }
+
+  span {
+    padding: 20px;
+    font-family: sans-serif;
+  }
+
+  input:checked + span {
+    background: #444;
+    color: #fff;
+  }
+</style>
+<p>
+  <label for="input">
+    <input id="input" type="checkbox"/>
+    <span>NO JS styling</span>
+  </label>
+</p>
+
+<p><input id="lala" type="checkbox"/></p>
+
