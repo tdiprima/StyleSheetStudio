@@ -1,0 +1,28 @@
+<title>Animate for 5 seconds and then fadeOut()</title>
+<!-- https://stackoverflow.com/questions/16274455/how-can-i-animate-for-5-seconds-and-then-fadeout-jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+</script>
+
+<style>
+  .item {
+    display: none;
+
+    width: 100px;
+    height: 100px;
+
+    background: orange;
+  }
+</style>
+
+<div class="item" style="display: none; opacity: 1;"></div>
+
+<script>
+  $('.item')
+    .fadeIn(3000)
+    .delay(100)
+    .fadeTo(1000, 0.4)
+    .delay(100)
+    .fadeTo(1000, 1)
+    .delay(100)
+    .fadeOut(3000);
+</script>

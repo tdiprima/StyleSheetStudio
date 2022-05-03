@@ -1,0 +1,25 @@
+<title>Accepted Answer</title>
+<!-- https://stackoverflow.com/questions/40862149/highlight-area-with-backgroundcolor-fadein-fadeout#40862324 -->
+<style>
+  span.small {
+    animation-name: bckanim;
+    animation-duration: 3s;
+    animation-delay: 0s;
+
+    background-color: orange;
+
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes bckanim {
+    0% {
+      background-color: orange;
+    }
+
+    100% {
+      background-color: transparent;
+    }
+  }
+</style>
+
+<span class="small">10 left</span>

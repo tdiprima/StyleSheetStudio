@@ -1,0 +1,39 @@
+<style>
+  /* https://jigsaw.w3.org/css-validator/validator */
+  .highlight {
+    animation-name: bckanim;
+    animation-duration: 3s;
+    animation-delay: 0s;
+
+    background-color: #00c6b9;
+
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes bckanim {
+    0% {
+      background-color: #00c6b9;
+    }
+
+    100% {
+      background-color: #f5f4f3;
+    }
+  }
+</style>
+
+<!-- <span class="highlight">10 left</span> -->
+
+<!-- Hm. -->
+
+<button id="myButton">button</button>
+
+<script>
+  let myButton = document.getElementById("myButton");
+  myButton.addEventListener("click", function () {
+    // This one is better, but you have to click twice -
+    this.classList.toggle('highlight');
+    // This one only works once -
+    // this.classList.remove('highlight');
+    // this.classList.add('highlight');
+  });
+</script>

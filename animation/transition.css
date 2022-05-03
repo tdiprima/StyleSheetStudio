@@ -1,0 +1,27 @@
+.block {
+    display: block;
+
+    width: 200px;
+    height: 200px;
+
+    /* Shorthand CSS syntax: */
+    /* transition: <property> <duration> <timing-function> <delay>; */
+
+    -webkit-transition: background-color 1000ms linear;
+       -moz-transition: background-color 1000ms linear;
+        -ms-transition: background-color 1000ms linear;
+         -o-transition: background-color 1000ms linear;
+            transition: background-color 1000ms linear;
+
+    /*background-color: orange;*/
+}
+
+.orange-fade {
+    -webkit-transition: background-color 1000ms linear;
+       -moz-transition: background-color 1000ms linear;
+        -ms-transition: background-color 1000ms linear;
+         -o-transition: background-color 1000ms linear;
+            transition: background-color 1000ms linear;
+
+    background-color: darkorange;
+}

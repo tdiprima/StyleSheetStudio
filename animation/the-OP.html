@@ -1,0 +1,44 @@
+<title>Henrik Baecklund</title>
+<!-- https://stackoverflow.com/questions/40862149/highlight-area-with-backgroundcolor-fadein-fadeout -->
+<!-- See also: https://beginnersbook.com/2019/04/jquery-fadeout-effect/ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+</script>
+
+<div>
+  <a href="https://stackoverflow.com/questions/40862149/highlight-area-with-backgroundcolor-fadein-fadeout">Highlight
+    Area with Background Color Fadein Fadeout</a><br>
+  <span class="small">10 left</span>
+</div>
+
+<script>
+  $(window).on("load", function () {
+    // span to have bck orange on page load.
+    $(".small").css("background-color", "orange");
+  })
+
+  $(document).ready(function () {
+    // and then the span to fade out
+    $(".small").css("background-color", "orange").fadeOut(2500);
+    // Only want to fadeout the background color, nothing else.
+  });
+</script>
+
+<br>
+
+<div>
+  <a href="https://beginnersbook.com/2019/04/jquery-fadeout-effect/">jQuery fadeOut effect example</a>
+  <p>This tutorial is published on beginnersbook.com. This
+    paragraph will gradually fadeout when the FadeOut button is clicked.</p>
+  <button>FadeOut</button>
+  <div class="item"></div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("button").click(function () {
+      // fadeOut can take a callback fn
+      // $("p").fadeOut(2500);
+      $("p").fadeOut("slow");
+    });
+  });
+</script>

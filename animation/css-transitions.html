@@ -1,0 +1,54 @@
+<title>Tschallacka</title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+  }
+</style>
+<link rel="stylesheet" href="transition.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+</script>
+
+<script>
+  // https://stackoverflow.com/questions/40862149/highlight-area-with-backgroundcolor-fadein-fadeout#40862439
+  $(document).ready(function () {
+    let block = $('.block');
+
+    /** first timeout to make the document do its stuff before this thing runs **/
+    window.setTimeout(function () {
+      block.addClass('orange-fade');
+
+      /** second timeout to turn it back to normal **/
+      window.setTimeout(function () {
+        block.removeClass('orange-fade');
+      }, 2000);
+
+    }, 1000);
+
+  });
+</script>
+
+<div class="block">
+  Loving You
+</div>
+
+<br>
+<p>
+  <b><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions">CSS transitions</a>
+    let you decide:</b>
+<ul>
+  <li>Which properties to animate<br>By listing them explicitly.</li>
+  <br>
+  <li>When the animation will start<br>By setting a delay.</li>
+  <br>
+  <li>How long the transition will last<br>By setting a duration.</li>
+  <br>
+  <li>How the transition will run<br>By defining a timing function,
+    <br>e.g. linearly, or quick at the beginning, slow at the end.</li>
+</ul>
+</p>
+
+<br>
+<p><b>The shorthand CSS syntax is written as follows:</b><br><br>
+  <code>transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt;;</code>
+</p>
