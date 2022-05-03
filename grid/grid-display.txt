@@ -1,0 +1,46 @@
+Creating A Grid Display With CSS
+A neat little trick I picked up in Phase 2 of Flatiron is creating a grid display in CSS. It can create a really appealing visual display and it’s super easy! So even a beginner like me can teach you. So let’s get started!
+How do we go from this:
+
+To this:
+
+The first step is to wrap all these items inside one container. In my example I went with a Div of list items, but technically as long as all the items are wrapped in an element that you can assign a class to, you’ll be fine! Now for the code:
+
+Here’s how this looks in our browser right now:
+
+Kind of lame right now to be honest. Let’s fix that!
+Now that we have our basic setup with class names we can start targeting our HTML elements with our CSS! Let’s see what that looks like:
+
+What’s going on here? The display property is saying we want a grid and the following two properties are declaring how many columns and rows I want my grid to be. This is defined by listing them out by “1fr” or “fraction unit”. All that is saying is that I want the grid columns to be split evenly by 3 fractions of the grid container’s width. Aren’t computers so dang smart?
+Here’s how it looks now:
+
+A little weird still, but we’re getting there!
+I could even get more specific and say exactly how wide I would want each element like so:
+
+This is now saying I want the first two columns to be 100px wide and the last 150px wide.
+Here’s how that looks: (I added some color to make it more visible as to what’s going on)
+
+Getting closer
+Now say I want my grid to be more spaced out. I can use a super handy tool “grid-gap” to get that done!
+
+Here’s how grid-gap works: The first one determines the gap between rows, and the second determines the gap between columns. If you want both of those values to be the same, then you could just put in one number. Then your columns and rows will have the same gap-distance. Like I said earlier, super easy!
+How that looks in our browser:
+
+Much cleaner now!
+Now let’s say we don’t want the very first item to be the first in the grid. What if I told you that we can tell our CSS exactly what spot in the grid we want that item be in.
+First we’ll have to assign an id to the HTML element we want to move so we can actually target it with our CSS:
+
+Nice! Now let’s target it and move it:
+
+Now we’re telling it that we want this specific item to be in the second row and on the second column. (I made it blue so we can see the results)
+Before:
+
+Ready for some magic?
+After:
+
+Alright it wasn’t magic but it’s still pretty cool!
+As you can see, the display: grid CSS property has a lot of functionality and gives us a ton of control on how we would like to display a group of items. This is just one of the tools that can help us provide a great experience for users! I hope you found this information as useful as it was for me!
+
+
+
+https://medium.com/@cameronclayfiorato/creating-a-grid-display-with-css-20d8fbfb8818
