@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table</title>
+  <!-- https://stackoverflow.com/questions/4646708/css-how-to-get-scrollbars-for-div-inside-container-of-fixed-height -->
+  <!-- http://jsfiddle.net/ftkbL/1/ -->
+  <style>
+    .fixedHeightContainer {
+      float: left;
+
+      width: 250px;
+      height: 250px;
+      padding: 3px;
+
+      background: #f00;
+    }
+
+    .content {
+      overflow: auto;
+
+      height: 224px;
+
+      background: #fff;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- https://divtable.com/generator/ -->
+<table class="fixedHeightContainer">
+  <thead>
+  <tr>
+    <th>head1</th>
+    <th>head2</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>CELL 1</td>
+    <!-- try, try, try -->
+    <td class="content">CELL 2
+      <div class="content">
+        <table class="content">
+          <tbody class="content">
+          <tr><td>cell1_1</td></tr>
+          <tr><td>cell1_2</td></tr>
+          <tr><td>cell1_3</td></tr>
+          <tr><td>cell1_4</td></tr>
+          <tr><td>cell1_5</td></tr>
+          <tr><td>cell1_6</td></tr>
+          <tr><td>cell1_7</td></tr>
+          <tr><td>cell1_8</td></tr>
+          <tr><td>cell1_9</td></tr>
+          <tr><td>cell1_10</td></tr>
+          <tr><td>cell1_11</td></tr>
+          <tr><td>cell1_12</td></tr>
+          <tr><td>cell1_13</td></tr>
+          <tr><td>cell1_14</td></tr>
+          </tbody>
+        </table>
+        <!-- DivTable.com -->
+      </div>
+    </td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr><td colspan="2">Footer</td></tr>
+  </tfoot>
+</table>
+
+</body>
+</html>

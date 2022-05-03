@@ -1,0 +1,50 @@
+  <title>Purple Horizon Lol</title>
+  <link rel="stylesheet" href="../stylesheets/purpleHorizon.css"/>
+  <style>
+    /* https://www.geeksforgeeks.org/making-a-div-vertically-scrollable-using-css/ */
+    div.scroll {
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      width: 500px;
+      height: 110px;
+      margin: 4px;
+      padding: 4px;
+
+      text-align: justify;
+
+      background-color: green;
+    }
+  </style>
+
+<!-- https://divtable.com/generator/ -->
+<table class="purpleHorizon">
+  <thead>
+  <tr>
+    <th>head1</th>
+    <th>head2</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>CELL 1</td>
+    <td>CELL 2
+      <div class="scroll">
+        <table>
+          <tbody>
+            <script>
+              for (let i = 1; i <= 14; i++) {
+                document.writeln(`<tr><td>cell ${i}</td></tr>`)
+              }
+            </script>
+          </tbody>
+        </table>
+        <!-- DivTable.com -->
+      </div>
+    </td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr><td colspan="2">Footer</td></tr>
+  </tfoot>
+</table>

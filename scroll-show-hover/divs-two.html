@@ -1,0 +1,34 @@
+<title>Display an Element on Hover</title>
+<title>two divs</title>
+
+<!-- https://www.w3schools.com/howto/howto_css_display_element_hover.asp -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="../stylesheets/hover-and-hyde.css"/>
+
+<h2>It's an element, and another immediately following.</h2>
+<h3>A normal <code>div</code>, and then <code>.normal-div:hover + .hide</code></h3>
+<div class="myDIV">Hover over me.</div>
+<div class="hide">I am shown when someone hovers over the div above.</div>
+
+<p><br></p>
+
+<!-- https://www.geeksforgeeks.org/display-div-element-on-hovering-over-a-tag-using-css/ -->
+<style>
+  span {
+    display: none;
+  }
+
+  a:hover+span {
+    font-size: 25px;
+
+    display: block;
+
+    color: green;
+  }
+</style>
+<a>GeeksforGeeks</a>
+<span> A computer science portal for Geeks. </span>
