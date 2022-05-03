@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <!-- https://youtu.be/SXQ9l0ScDEA -->
+    <!-- https://bryanlrobinson.com/blog/how-to-css-after-elements-for-background-overlays/ -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 10px;
+        }
+
+        .banner {
+            position: relative;
+            min-height: 60vh;
+            background-image: url(https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80);
+            /* background-image: url(https://images.unsplash.com/photo-1509473332032-f1ce823d92c4?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=3e2410208e8f8a78e4aa3550fddfbb44); */
+            background-size: cover;
+            display: flex;
+        }
+
+        h1 { margin: auto; }
+
+        /* I usually give the overlay a 1 and my content 100 */
+        .banner:after {
+            content: "";  /* :before and :after both require content */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background-image: linear-gradient(120deg,#eaee44,#33d0ff); */
+            background-image: linear-gradient(120deg,red,blue);
+            opacity: .7;
+            z-index: 1;
+            /* mix-blend-mode: color; */
+            /* mix-blend-mode: hard-light; */
+            /* mix-blend-mode: hue; */
+        }
+
+        /* can have any number of children underneath the banner */
+        .banner>* {
+            /* for any element under banner, set a z-index */
+            z-index: 100;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section class="banner">
+        <h1>Hello Dumbbells</h1>
+        <!-- <h1>Hello Dumdums</h1> -->
+    </section>
+</body>
+
+</html>

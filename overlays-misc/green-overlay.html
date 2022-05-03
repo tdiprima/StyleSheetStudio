@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css-overlay-techniques</title>
+  <!-- https://tympanus.net/codrops/2013/11/07/css-overlay-techniques/ -->
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+    @import url(https://fonts.googleapis.com/css?family=Federo);
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+
+      position: relative;
+      /* needed for the overlay to extend when you scroll */
+      /* general styles */
+
+      padding: 30px;
+
+      color: #fff;
+      background: #0ff18f;
+    }
+
+    /* overlay styles, all needed */
+
+    .overlay {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: rgba(0, 0, 0, .5);
+      /*dim the background*/
+    }
+
+    .modal {
+      line-height: 200px;
+
+      position: fixed;
+      z-index: 11;
+      top: 50%;
+      left: 50%;
+
+      width: 300px;
+      height: 200px;
+      margin-top: -100px;
+      margin-left: -150px;
+
+      text-align: center;
+
+      border-radius: 5px;
+      background-color: #0ff18f;
+      /* 1px higher than the overlay layer */
+    }
+
+    .content {
+      margin: 30px;
+    }
+
+    h1 {
+      font-family: 'Federo', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="modal">I'm the modal window!</div>
+
+<div class="content">
+  <h1>Creating an Overlay with an Absolutely Positioned Element</h1>
+  <p>The first way that an overlay can be created is by absolutely positioning an HTML element on the page. There
+    would be an empty div in the markup, and with CSS this div is positioned absolutely and given a high z-index
+    value to make sure it stays on top of all other elements on the page, except the modal which is opened on
+    top of
+    this overlay, which will get a even higher z-index than the overlay.</p>
+  <p>Supposing we have already added an empty div to the markup and given it a class .overlay, the CSS to position
+    this overlay on the page is:</p>
+  <p>The code is very simple, but there are a few things to be aware of when using this technique.</p>
+
+  <p>First, you need to make sure that the overlay is positioned absolutely with respect to the body. So, if the
+    overlay is contained in another div for example and that other div has a position set to relative, then the
+    overlay will be positioned absolutely with respect to its container, not the page body. So you have to
+    either let the overlay be a direct child node of the body, or make sure none of its ancestors has a position
+    set to relative.</p>
+
+  <p>Also, you need to make sure the content of the page expands down to the bottom of the viewport or more,
+    because the body expands to fit the height of its content (assuming the content is not positioned
+    absolutely, of course), and if there isn’t enough content to expand the body height to the bottom of the
+    viewport, then the overlay, which is getting 100% the height of the body, won’t reach the bottom of the
+    viewport either, and so it won’t be covering it.</p>
+
+  <p>To avoid this, and not have to worry about the amount of content on the page, and still get an overlay which
+    covers the entire viewport size, you should set a height on the root html element and the body. There is
+    another thing to remember, though, when you set a height on the html and body elements:</p>
+
+  <p>If you give the html element a height of 100% (100% height relative to the viewport), and give the body a
+    100% height too (which is computed relative to the root html), then you’re setting the height of both of
+    them to be 100% the height of the viewport, and so, no matter how far down the content of the body extends,
+    their height remains equal to that of the viewport, and so will the height of the overlay. In this case, if
+    you scroll down the page, the overlay will scroll up and you’ll see the content below it without an overlay,
+    as if the overlay’s been cut off.</p>
+
+  <p>The solution here is to set a minimum height on the root element and on the body instead of setting a height
+    value, which is preferable in most situations. By setting a minimum height, you’ll make sure that their
+    height reaches the bottom of the viewport, and increases as the content increases. And lastly, to make the
+    overlay’s height increase and have it expand to cover all the content on page scroll, you must set a
+    position:relative; on the body so that the overlay’s height expands as the body’s height expands.</p>
+
+  <p>Another thing to note about this technique is not to use unnecessarily high z-index values. A lot of
+    developers tend to use very high z-index values like z-index: 999999; when they position an overlay, or any
+    other element, on top of other elements on a page. This is not necessary. Most of the times a z-index value
+    of 10, or sometimes even less, is more than enough to keep an element on top of others on the page. You just
+    need to know if there are other elements getting a z-index, and if there are, just set the z-index of the
+    overlay higher than the highest of the other elements.</p>
+
+  <p>And finally, you should also remember that with this technique you’re adding an empty div to your markup,
+    which of course is non-semantic.</p>
+
+  <p>An advantage of using this technique is that it is supported in all major browsers and also older ones, down
+    to IE8.</p>
+</div>
+
+<script>
+  // make the overlay disappear on click
+  let overlay = document.querySelector('.overlay');
+  let modal = document.querySelector('.modal');
+
+  function f() {
+    modal.style.display = 'none';
+    overlay.style.display = 'none';
+    document.body.style.backgroundColor = 'white';
+    document.body.style.color = 'black';
+  }
+
+  overlay.addEventListener('click', f);
+  modal.addEventListener('click', f);
+
+</script>
+
+</body>
+</html>

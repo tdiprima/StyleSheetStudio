@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>popup = overlay</title>
+  <!-- Here is an example: https://www.stonybrookmedicine.edu/patientcare/surgery -->
+  <style>
+    body {
+      /* background-image: url(https://images.unsplash.com/photo-1454694220579-9d6672b1ec2a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=332&q=80); */
+      background-image: url(https://images.unsplash.com/photo-1508872558182-ffc7f1b387f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+    }
+
+    #overlay {
+      position: fixed;
+      /* Sit on top of the page content */
+      display: block;
+      width: 100%;
+      /* Full width (cover the whole page) */
+      height: 100%;
+      /* Full height (cover the whole page) */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      /* Black background with opacity */
+      z-index: 9999;
+    }
+
+    #text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: white;
+      font-size: 1.25em;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+
+    @media only screen and (max-width: 790px) and (min-width: 320px) {
+      #text { width: 90%; }
+      #overlay { top: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    function off() {
+      document.getElementById('overlay').style.display = 'none'
+    }
+  </script>
+
+  <!-- Tim would at times say something offensive to a certain group on the show most likely women to which Al would respond by reciting and showing on a cue card the show's mailing address: -->
+  <div id="overlay">
+    <div id="text">
+      <button id="close" onclick="off()" style="color: #000;">X</button>
+      <h3>Tool Time's mailing address:</h3>
+      <p>Tim Taylor<br>
+        c/o Tool Time<br>
+        P.O. Box 32733<br>
+        Detroit, MI 48252</p>
+    </div>
+  </div>
+</body>
+
+</html>
