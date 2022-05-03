@@ -1,0 +1,21 @@
+/* https://www.samanthaming.com/tidbits/35-es6-way-to-clone-an-array/ */
+.red {
+  color: #db0a5a;
+  background-color: #ffafd2;
+}
+
+.blue {
+  background-color: #d0e2ff;
+  background-color: #a6c8ff;
+  background-color: #78a9ff;
+}
+
+/* Use these: */
+::selection {
+  background-color: #ffafd2;
+}
+
+body {
+  color: #5b6ac4;
+  background-color: #edf5ff;
+}

@@ -1,0 +1,59 @@
+/* https://astrograph.com/horoscopes/aquarius/ */
+/* https://astrograph.com/styles/bootstrap-expand.css?v=5:355*/
+
+.fire {
+  /* background-color: #FFE5E5; */
+  color: #000;
+}
+
+a.fire {
+  border-bottom: 2px solid #FFE5E5;
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover.fire {
+  background-color: #FFE5E5;
+}
+
+.air {
+  color: #000;
+}
+
+a.air {
+  border-bottom: 2px solid #fbfbcc;
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover.air {
+  background-color: #fbfbcc;
+}
+
+.water {
+  color: #000;
+}
+
+a.water {
+  border-bottom: 2px solid #E6E8FF;
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover.water {
+  background-color: #E6E8FF;
+}
+
+.earth {
+  color: #000;
+}
+
+a.earth {
+  border-bottom: 2px solid #E7FADE;
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover.earth {
+  background-color: #E7FADE;
+}

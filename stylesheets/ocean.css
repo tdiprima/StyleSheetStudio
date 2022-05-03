@@ -1,0 +1,40 @@
+body,
+td {
+  background: navy;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: justify;
+}
+
+h2 {
+  font-size: 14pt;
+  color: #87cefa;
+}
+
+h3 {
+  font-size: 13pt;
+  color: #7fffd4;
+}
+
+h4 {
+  font-size: small;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: aqua;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #32cd32;
+}
+
+hr {
+  color: blue;
+  height: 1pt;
+}

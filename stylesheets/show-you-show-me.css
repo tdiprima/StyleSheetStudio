@@ -1,0 +1,15 @@
+/* Another Lionel Richie reference (Say You, Say Me) */
+body {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+}
+
+/* https://stackoverflow.com/questions/5210033/using-only-css-show-div-on-hover-over-another-element#5210064 */
+.showme {
+  display: none;
+}
+
+/* this one does not have the '+' */
+.showhim:hover .showme {
+  display: block;
+  color: #fc390e;
+}

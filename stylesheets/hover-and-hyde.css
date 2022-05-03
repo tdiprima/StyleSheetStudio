@@ -1,0 +1,25 @@
+body {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+}
+
+/* https://www.geeksforgeeks.org/css-overflow/ */
+.scroll {
+  overflow: scroll;
+
+  width: 220px;
+  height: 250px;
+
+  border: 1px solid;
+}
+
+/* https://www.w3schools.com/howto/howto_css_display_element_hover.asp */
+.hide {
+  display: none;
+}
+
+/* this one has a '+' */
+.myDIV:hover+.hide {
+  display: block;
+
+  color: red;
+}

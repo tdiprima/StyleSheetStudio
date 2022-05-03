@@ -1,0 +1,21 @@
+/* Hello... is it me you're looking for? */
+
+body {
+  font-family: sans-serif;
+
+  margin: 10px;
+  padding: 5px;
+
+  background-color: #fff;
+}
+
+h2.title {
+  font-weight: bold;
+
+  color: #fc390e;
+  text-shadow: #000 -1px -1px 1px;
+}
+
+/*
+<h2 class="title">Hello</h2>
+*/
