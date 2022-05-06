@@ -1,0 +1,108 @@
+:root {
+  --highlight: #00c6b9;
+  --bg-dark: #272b38;
+  --text-dark: #cac3bc;
+  --bg-light: #f5f4f3;
+  --text-light: #27374c;
+  --sun: #ffd475;
+  --tooltip: #fff7d6;
+  --no-frills: #ccc;
+  --rgb-on: rgb(255, 255, 255);
+  --rgba-on: rgba(255, 255, 255, 1);
+}
+
+.table {
+  display: table;
+}
+
+.row {
+  display: table-row;
+}
+
+.col {
+  display: table-cell;
+  vertical-align: top;
+}
+
+body {
+  color: lightyellow;
+  background-color: #0c0f1d;
+}
+
+.layerBtn {
+  font-family: Arial, Helvetica, sans-serif;
+  float: left;
+  overflow: hidden;
+  width: 90px;
+  padding: .5em 1em;
+  cursor: move;
+  transform: skew(-10deg);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #3a8a9e;
+  border: #d6bcd6;
+  background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+  background-color: rgba(0, 0, 0, 0);
+  background-color: #ededed;
+  box-shadow: 3px 4px 0 0 #899599;
+  text-shadow: 0 1px 0 #e1e2ed;
+}
+
+.annotationBtn,
+.layerBtn {
+  font-size: 100%;
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+[draggable="true"] {
+  cursor: move;
+  -webkit-user-drag: element;
+  -moz-user-drag: element;
+}
+
+.singleSlider {
+  height: 12px;
+  opacity: 2;
+  background: var(--rgb-on);
+  background: -webkit-linear-gradient(90deg, var(--rgba-on) 0%, var(--highlight) 35%, var(--text-light) 100%);
+  background: -moz-linear-gradient(90deg, var(--rgba-on) 0%, var(--highlight) 35%, var(--text-light) 100%);
+  background: linear-gradient(90deg, var(--rgba-on) 0%, var(--highlight) 35%, var(--text-light) 100%);
+  -webkit-appearance: none;
+}
+
+.dualSlider,
+.dualSlider1,
+.singleSlider,
+input {
+  font: inherit;
+}
+
+.scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* overflow: auto; */
+
+  width: 200px;
+  height: 475px;
+
+  /* green */
+  /* background-color: lightcyan; */
+  /* background-color: chartreuse; */
+  /* background-color: darkorchid; */
+}
+
+.showHover {
+  z-index: 1080 !important;
+  display: none;
+}
+
+.showDiv:hover .showHover {
+  position: absolute;
+  z-index: 1090 !important;
+
+  display: block;
+  overflow: hidden;
+}
