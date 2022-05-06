@@ -1,21 +1,7 @@
-  <title>Purple Horizon Lol</title>
-  <link rel="stylesheet" href="../stylesheets/purpleHorizon.css"/>
-  <style>
-    /* https://www.geeksforgeeks.org/making-a-div-vertically-scrollable-using-css/ */
-    div.scroll {
-      overflow-x: hidden;
-      overflow-y: auto;
-
-      width: 500px;
-      height: 110px;
-      margin: 4px;
-      padding: 4px;
-
-      text-align: justify;
-
-      background-color: green;
-    }
-  </style>
+<title>Purple Horizon Lol</title>
+<!--https://www.geeksforgeeks.org/making-a-div-vertically-scrollable-using-css/-->
+<link rel="stylesheet" href="../stylesheets/purpleHorizon.css"/>
+<link rel="stylesheet" href="g4g.css"/>
 
 <!-- https://divtable.com/generator/ -->
 <table class="purpleHorizon">
@@ -32,11 +18,11 @@
       <div class="scroll">
         <table>
           <tbody>
-            <script>
-              for (let i = 1; i <= 14; i++) {
-                document.writeln(`<tr><td>cell ${i}</td></tr>`)
-              }
-            </script>
+          <script>
+            for (let i = 1; i <= 14; i++) {
+              document.writeln(`<tr><td>cell ${i}</td></tr>`)
+            }
+          </script>
           </tbody>
         </table>
         <!-- DivTable.com -->
@@ -45,6 +31,8 @@
   </tr>
   </tbody>
   <tfoot>
-  <tr><td colspan="2">Footer</td></tr>
+  <tr>
+    <td colspan="2">Footer</td>
+  </tr>
   </tfoot>
 </table>
