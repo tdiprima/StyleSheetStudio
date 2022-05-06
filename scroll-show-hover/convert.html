@@ -1,0 +1,68 @@
+<!-- https://codepen.io/rno1d/pen/DEoYvw -->
+<style>
+  table { border-collapse: collapse; }
+
+  td {
+    padding: 5px;
+    border: 1px solid #000;
+  }
+
+  div { background: rgba(0, 0, 0, .07); }
+
+  .table { padding: 1px 10px; }
+
+  .row {
+    overflow: hidden;
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .col {
+    float: left;
+    margin: 1px;
+    padding: 10px;
+  }
+
+  body { font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif !important; }
+</style>
+<h3 style="color: #adfbda">Original Table</h3>
+<table>
+  <tr>
+    <td>Row-1 Col-1</td>
+    <td class="red">Row-1 Col-2</td>
+    <td>Row-1 Col-3</td>
+  </tr>
+  <tr>
+    <td>Row-2 Col-1</td>
+    <td>Row-2 Col-2</td>
+    <td>Row-2 Col-3</td>
+  </tr>
+  <tr>
+    <td>Row-3 Col-1</td>
+    <td>Row-3 Col-2</td>
+    <td>Row-3 Col-3</td>
+  </tr>
+</table>
+
+<h3 style="color: #fda399">The Table converted to DIVs</h3>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+  /* Clone the table (optional) */
+  $('table')
+    .clone()
+    .appendTo('body')
+    .addClass('cloned');
+
+  /* Converts the .cloned table to DIVs */
+  $('table.cloned').replaceWith(
+    $('table')
+      .html()
+      .replace(/<tbody/gi, '<div class="table"')
+      .replace(/<tr/gi, '<div class="row"')
+      .replace(/<\/tr>/gi, '</div>')
+      .replace(/<td/gi, '<div class="col"')
+      .replace(/<\/td>/gi, '</div>')
+      .replace(/<\/tbody/gi, '</div')
+  );
+</script>
