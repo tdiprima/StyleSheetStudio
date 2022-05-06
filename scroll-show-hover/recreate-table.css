@@ -83,15 +83,8 @@ input {
 .scroll {
   overflow-x: hidden;
   overflow-y: auto;
-  /* overflow: auto; */
-
   width: 200px;
   height: 475px;
-
-  /* green */
-  /* background-color: lightcyan; */
-  /* background-color: chartreuse; */
-  /* background-color: darkorchid; */
 }
 
 .showHover {
