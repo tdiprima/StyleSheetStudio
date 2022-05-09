@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-  integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
 <style>
   .scroll {
@@ -17,15 +17,37 @@
   /* TODO: we want the one without the '+' */
   .myDIV:hover .hide {
     display: block;
-    color: #fc390e;
   }
 
-  .pink {
-    color:deeppink
+  .ex1 {
+    color: #f0f;
+  }
+
+  .ex2 {
+    color: aqua;
+  }
+
+  /* DivTable.com */
+  .divTable {
+    display: table;
+  }
+
+  .divTableRow {
+    display: table-row;
+  }
+
+  .divTableCell {
+    display: table-cell;
+    padding: 3px 10px;
+  }
+
+  h1, h2 {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
   }
 </style>
 
-<h2>scroll + show-hover</h2>
+<h1>scroll + show-hover</h1>
+<h2>works as table</h2>
 <table>
   <tr>
     <td>
@@ -35,7 +57,7 @@
         <!-- Even the hidden ones you have to scroll to. -->
         <script>
           for (let i = 1; i <= 40; i++) {
-            document.writeln(`<div class="myDIV pink">${i} <i class="fas fa-lungs"></i>
+            document.writeln(`<div class="myDIV ex1">${i} <i class="fas fa-lungs"></i>
 <div class="hide"><input type="range" id="points" name="points" min="0" max="10" value="10"></div></div>`)
           }
         </script>
@@ -44,3 +66,24 @@
     </td>
   </tr>
 </table>
+
+<p><br></p>
+
+<h2>and table to div</h2>
+
+<div class="divTable">
+  <div class="divTableRow">
+    <div class="divTableCell">
+
+      <div class="scroll">
+        <script>
+          for (let i = 1; i <= 40; i++) {
+            document.writeln(`<div class="myDIV ex2">${i} <i class="fas fa-lungs"></i>
+<div class="hide"><input type="range" id="points" name="points" min="0" max="10" value="10"></div></div>`)
+          }
+        </script>
+      </div>
+
+    </div>
+  </div>
+</div>
