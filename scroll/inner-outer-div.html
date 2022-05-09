@@ -1,0 +1,29 @@
+<!-- https://stackoverflow.com/questions/4646708/css-how-to-get-scrollbars-for-div-inside-container-of-fixed-height#70917519 -->
+<style>
+  #outerDiv {
+    height: 200px;
+    margin: 44px;
+    border: solid 4px Red;
+  }
+
+  #innerDiv {
+    font-size: 300%;
+    overflow-y: auto; /* prevents the innerDiv from overflowing */
+    height: 80%; /* innerDiv height less than outerDiv */
+    border: solid 4px Green;
+  }
+
+  h2 {
+    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+  }
+</style>
+
+<h2>setting the <code>overflow</code> should take care of it, but you need to set the <code>height</code> of Content also</h2>
+
+<h3>my solution only uses two CSS-classes, 'innerDiv' and 'outerDiv'</h3>
+
+<div id="outerDiv">
+  <div id="innerDiv">
+    A <p> B <p> C <p> D <p>
+  </div>
+</div>

@@ -1,14 +1,12 @@
 /* https://www.geeksforgeeks.org/making-a-div-vertically-scrollable-using-css/ */
+/* set x to auto and y to hidden */
 div.scroll {
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    width: 500px;
-    height: 110px;
-    margin: 4px;
-    padding: 4px;
-
-    text-align: justify;
-
-    background-color: green;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 500px;
+  height: 110px;
+  margin: 4px;
+  padding: 4px;
+  text-align: justify;
+  background-color: green;
 }
