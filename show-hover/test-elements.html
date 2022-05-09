@@ -3,7 +3,7 @@
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
 <script>
-  function scribe() {
+  function writeRows() {
     for (let i = 1; i <= 20; i++) {
       document.writeln(`<div class="divTableRow"><div class="divTableCell">
 <div class="myDIV ex1">${i} <i class="fas fa-lungs"></i>
@@ -22,13 +22,11 @@
 
   .singleSlider {
     height: 12px;
-
     opacity: 2;
     background: var(--rgb-on);
     background: -webkit-linear-gradient(90deg, var(--rgba-on) 0%, var(--highlight) 35%, var(--text-light) 100%);
     background: -moz-linear-gradient(90deg, var(--rgba-on) 0%, var(--highlight) 35%, var(--text-light) 100%);
     background: linear-gradient(90deg, var(--rgba-on) 0%, var(--highlight) 35%, var(--text-light) 100%);
-
     -webkit-appearance: none;
   }
 
@@ -43,7 +41,6 @@
     display: none;
   }
 
-  /* TODO: we want the one without the '+' */
   .myDIV:hover .hide {
     display: block;
   }
@@ -88,7 +85,7 @@
 
         <!-- TODO: And I'm showing that I can click on all of them. -->
         <!-- Even the hidden ones you have to scroll to. -->
-        <script>scribe()</script>
+        <script>writeRows()</script>
 
       </div>
     </td>
@@ -104,7 +101,7 @@
     <div class="divTableCell">
 
       <div class="scroll">
-        <script>scribe()</script>
+        <script>writeRows()</script>
       </div>
 
     </div>
@@ -125,17 +122,18 @@
 </table> -->
 
 <div class="divTable" style="border: 2px solid blue">
-  <div class="divTableBody">
+  <!-- <div class="divTableBody"> -->
     <div class="divTableRow">
       <div class="divTableCell">
+
+        <!-- start here -->
         <div class="divTable" style="border: 2px solid red">
           <div class="divTableBody scroll">
-            <div class="divTableRow">
-              <script>scribe()</script>
-            </div>
+              <script>writeRows()</script>
           </div>
         </div>
+
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 </div>
