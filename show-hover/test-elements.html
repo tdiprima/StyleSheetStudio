@@ -2,7 +2,41 @@
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
+<script>
+  function scribe() {
+    for (let i = 1; i <= 40; i++) {
+      document.writeln(`<div class="divTableRow"><div class="divTableCell">
+<div class="myDIV ex2">${i} <i class="fas fa-lungs"></i>
+<div class="hide"><input class="singleSlider" type="range" id="points" name="points" min="0" max="10" value="10"></div></div>
+</div></div>`)
+    }
+
+//     for (let i = 1; i <= 40; i++) {
+//       document.writeln(`<div class="myDIV ex2">${i} <i class="fas fa-lungs"></i>
+// <div class="hide"><input class="singleSlider" type="range" id="points" name="points" min="0" max="10" value="10"></div></div>`)
+//     }
+  }
+</script>
 <style>
+  :root {
+    --highlight: #00c6b9;
+    --text-light: #27374c;
+    --rgb-on: rgb(255, 255, 255);
+    --rgba-on: rgba(255, 255, 255, 1);
+  }
+
+  .singleSlider {
+    height: 12px;
+
+    opacity: 2;
+    background: var(--rgb-on);
+    background: -webkit-linear-gradient(90deg, var(--rgba-on) 0%, var(--highlight) 35%, var(--text-light) 100%);
+    background: -moz-linear-gradient(90deg, var(--rgba-on) 0%, var(--highlight) 35%, var(--text-light) 100%);
+    background: linear-gradient(90deg, var(--rgba-on) 0%, var(--highlight) 35%, var(--text-light) 100%);
+
+    -webkit-appearance: none;
+  }
+
   .scroll {
     overflow: scroll;
     width: 220px;
@@ -44,10 +78,14 @@
   h1, h2 {
     font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
   }
+
+  body {
+    margin-bottom: 50px;
+  }
 </style>
 
 <h1>scroll + show-hover</h1>
-<h2>works as table</h2>
+<h2>works as <code>table</code></h2>
 <table>
   <tr>
     <td>
@@ -55,12 +93,7 @@
 
         <!-- TODO: And I'm showing that I can click on all of them. -->
         <!-- Even the hidden ones you have to scroll to. -->
-        <script>
-          for (let i = 1; i <= 40; i++) {
-            document.writeln(`<div class="myDIV ex1">${i} <i class="fas fa-lungs"></i>
-<div class="hide"><input type="range" id="points" name="points" min="0" max="10" value="10"></div></div>`)
-          }
-        </script>
+        <script>scribe()</script>
 
       </div>
     </td>
@@ -69,21 +102,45 @@
 
 <p><br></p>
 
-<h2>and table to div</h2>
+<h2>and <code>table</code> to <code>div</code></h2>
 
 <div class="divTable">
   <div class="divTableRow">
     <div class="divTableCell">
 
       <div class="scroll">
-        <script>
-          for (let i = 1; i <= 40; i++) {
-            document.writeln(`<div class="myDIV ex2">${i} <i class="fas fa-lungs"></i>
-<div class="hide"><input type="range" id="points" name="points" min="0" max="10" value="10"></div></div>`)
-          }
-        </script>
+        <script>scribe()</script>
       </div>
 
+    </div>
+  </div>
+</div>
+
+<h2><code>table</code> inside <code>table</code> (as <code>div</code>)...</h2>
+<!-- <table style="border: 2px solid blue">
+  <tr>
+    <td>
+      <table style="border: 2px solid red">
+        <tr>
+          <td>Hello!</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table> -->
+
+<div class="divTable" style="border: 2px solid blue">
+  <div class="divTableBody">
+    <div class="divTableRow">
+      <div class="divTableCell">
+        <div class="divTable" style="border: 2px solid red">
+          <div class="divTableBody scroll">
+            <div class="divTableRow">
+              <script>scribe()</script>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

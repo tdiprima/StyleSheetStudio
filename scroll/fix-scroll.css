@@ -5,19 +5,6 @@
   --rgba-on: rgba(255, 255, 255, 1);
 }
 
-.table {
-  display: table;
-}
-
-.row {
-  display: table-row;
-}
-
-.col {
-  display: table-cell;
-  vertical-align: top;
-}
-
 body {
   color: lightyellow;
   background-color: #0c0f1d;
@@ -58,4 +45,57 @@ body {
 .singleSlider,
 input {
   font: inherit; /* TODO */
+}
+
+/* table idk */
+.table {
+  display: table;
+}
+
+.row {
+  display: table-row;
+}
+
+.col {
+  display: table-cell;
+  vertical-align: top;
+}
+
+/* DivTable.com */
+.divTable {
+  display: table;
+  height: 200px;
+  overflow-y: auto;
+}
+
+.divTableRow {
+  display: table-row;
+}
+
+.divTableHeading {
+  display: table-header-group;
+  background-color: #eee;
+}
+
+.divTableCell,
+.divTableHead {
+  display: table-cell;
+  padding: 3px 10px;
+  border: 1px solid #999;
+}
+
+.divTableHeading {
+  font-weight: bold;
+  display: table-header-group;
+  background-color: #eee;
+}
+
+.divTableFoot {
+  font-weight: bold;
+  display: table-footer-group;
+  background-color: #eee;
+}
+
+.divTableBody {
+  display: table-row-group;
 }
