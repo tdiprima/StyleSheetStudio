@@ -1,0 +1,69 @@
+<!-- vendor prefix lists -->
+<!-- https://stackoverflow.com/questions/5411026/list-of-css-vendor-prefixes -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Mozilla_Extensions -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars -->
+<style>
+  .FixedHeightContainer {
+    float: left;
+    overflow-y: scroll;
+    width: 250px;
+    height: 250px;
+
+    /* Mozilla */
+    scrollbar-width: 16px; /* doesn't seem to have any affect in ff */
+    scrollbar-color: rebeccapurple green;
+  }
+
+  /* vendor-prefixed properties */
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: green;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    background-color: rebeccapurple;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* .FixedHeightContainer::-webkit-scrollbar {
+    width: 16px;
+  } */
+
+  /* .FixedHeightContainer::-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    background-color: rebeccapurple;
+  } */
+
+  /* .FixedHeightContainer::-webkit-scrollbar-track {
+    background-color: green;
+  } */
+
+  body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+  }
+</style>
+
+<h2>Chrome, Edge, Safari and Opera support the non-standard <code>::-webkit-scrollbar</code> pseudo element, which
+  allows us to modify the look of the browser's scrollbar.</h2>
+<div class="FixedHeightContainer">
+  <h2>Title</h2>
+  <div class="Content">
+    <script>
+      for (let i = 0; i < 200; i++) {
+        document.writeln("heck ");
+      }
+    </script>
+  </div>
+</div>
