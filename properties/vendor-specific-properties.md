@@ -4,6 +4,16 @@ CSS vendor prefixes, also sometimes known as or CSS browser prefixes, are a way 
 
 [What are they and why you should use them](https://www.thoughtco.com/css-vendor-prefixes-3466867)
 
+```css
+element {
+    -webkit-transition: all 4s ease;
+       -moz-transition: all 4s ease;
+        -ms-transition: all 4s ease;
+         -o-transition: all 4s ease;
+            transition: all 4s ease;
+}
+```
+
 <br>
 
 <table cellpadding="0" cellspacing="0" border="1" id="vendorspecific__tbl_vendor-specific-extensions_vendor-extension-prefixes">
@@ -52,7 +62,7 @@ CSS vendor prefixes, also sometimes known as or CSS browser prefixes, are a way 
 
 <br>
 
-Although these extensions can be useful at times, it's still recommended that you avoid using them unless it's absolutely necessary.
+Although these extensions can be useful at times, it's still recommended that you avoid using them <mark>unless it's absolutely necessary.</mark>
 
 It's also worth noting that, as is usually the case with proprietary code, the extensions will not pass CSS validation.
 
