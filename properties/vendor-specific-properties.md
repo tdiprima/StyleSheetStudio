@@ -4,6 +4,8 @@ CSS vendor prefixes, also sometimes known as or CSS browser prefixes, are a way 
 
 [What are they and why you should use them](https://www.thoughtco.com/css-vendor-prefixes-3466867)
 
+Want to know what the browser support for a certain feature is? The website [CanIUse.com](https://caniuse.com/) is a wonderful resource for gathering this information and letting you know which browsers, and which versions of those browsers, currently support a feature.
+
 ```css
 element {
     -webkit-transition: all 4s ease;
