@@ -41,7 +41,7 @@ CSS vendor prefixes, also sometimes known as or CSS browser prefixes, are a way 
 </tr>
 <tr>
 <th id="d5977e161" class="firstcol width16.666666666666664" headers="d5977e87"><code class="codeph">-webkit-</code></th>
-<td class="width83.33333333333334" headers="d5977e161 d5977e90">Safari (and other <a title="" href="http://trac.webkit.org/projects/webkit/wiki/Applications%20using%20WebKit">WebKit-based browsers)</a></td>
+<td class="width83.33333333333334" headers="d5977e161 d5977e90">Android, Chrome, iOS, Safari (<a title="WebKit-based browsers" href="http://trac.webkit.org/projects/webkit/wiki/Applications%20using%20WebKit">WebKit-based browsers)</a></td>
 </tr>
 <tr>
 <th id="d5977e173" class="firstcol width16.666666666666664" headers="d5977e87"><code class="codeph">-khtml-</code></th>
