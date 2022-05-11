@@ -359,6 +359,14 @@ p {
 
 <br>
 
+## CSS Grid
+
+To get started, you have to define a container element as a grid with `display: grid`, set the column and row sizes with `grid-template-columns` and `grid-template-rows`, and then place its child elements into the grid with `grid-column` and `grid-row`. Similarly to flexbox, the source order of the grid items doesn't matter.
+
+[css-tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
+
+<br>
+
 ## grid-column
 
 Shorthand property for `grid-column-start` and `grid-column-end`.
