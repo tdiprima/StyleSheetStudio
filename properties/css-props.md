@@ -2,6 +2,8 @@
 
 ## April 27, 2022
 
+This is mainly everything I'm using in multi-viewer.
+
 ## Cross Browser Compatibility
 
 ```css
@@ -1278,6 +1280,18 @@ The non-standard `-webkit-user-drag` property can be used to either make an elem
 [webkit user-drag](https://caniuse.com/webkit-user-drag)
 
 `moz-user-drag`: same thing, but in Firefox.
+  
+## voice-family
+
+[tutorialspoint](https://www.tutorialspoint.com/css/css_voice-family.htm)
+
+The voice-family property is used to define the specific voice, and optionally a generic voice type, which is to be used in the speaking of content.
+  
+```css
+h1 { voice-family: announcer, male }
+p.part.romeo  { voice-family: romeo, male }
+p.part.juliet { voice-family: juliet, female }
+```
 
 <!--
 # TJD
