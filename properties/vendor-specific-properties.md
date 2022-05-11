@@ -1,5 +1,9 @@
 ## [Vendor-specific Properties](https://www.sitepoint.com/vendor-specific-properties/)
 
+CSS vendor prefixes, also sometimes known as or CSS browser prefixes, are a way for browser makers to add support for new CSS features before those features are fully supported in all browsers.
+
+[What are they and why you should use them](https://www.thoughtco.com/css-vendor-prefixes-3466867)
+
 <br>
 
 <table cellpadding="0" cellspacing="0" border="1" id="vendorspecific__tbl_vendor-specific-extensions_vendor-extension-prefixes">
