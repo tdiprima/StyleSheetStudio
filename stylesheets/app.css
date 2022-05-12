@@ -1385,6 +1385,7 @@ body a:hover {
 
 .setup p {
   font-family: 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
+  /* font-family: Poppins, sans-serif; */
   font-size: 15px;
   line-height: 1.6;
 }
