@@ -1,0 +1,137 @@
+<style>
+  /* cool transform that I found */
+  @-webkit-keyframes slide-in-from-top {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slide-in-from-top {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* wicket crap */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* change this color */
+.navbar {
+  overflow: hidden;
+
+  transition: opacity .2s linear;
+  transition: background-color .2s linear;
+  -webkit-animation: 1s ease-out 0s 1 slide-in-from-top;
+      animation: 1s ease-out 0s 1 slide-in-from-top;;
+
+  background-color: #666;
+}
+
+.navbar a {
+  font-size: 16px;
+
+  float: left;
+
+  padding: 14px 16px;
+
+  text-align: center;
+  text-decoration: none;
+
+  color: white;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+
+  transition: opacity .2s linear;
+}
+
+.dropdown .dropbtn {
+  font-family: inherit;
+  font-size: 16px;
+
+  margin: 0;
+  padding: 14px 16px;
+
+  transition: opacity .2s linear;
+
+  color: white;
+  border: none;
+  outline: none;
+  background-color: inherit;
+}
+
+/* change that color */
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #537895;
+}
+
+.dropdown-content {
+  position: absolute;
+  z-index: 1;
+
+  display: none;
+
+  min-width: 160px;
+
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+}
+
+.dropdown-content a {
+  display: block;
+  float: none;
+
+  padding: 12px 16px;
+
+  text-align: left;
+  text-decoration: none;
+
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+
+<div wicket:id="menu">
+  <wicket:panel xmlns:wicket="http://wicket.apache.org">
+    <div id="main-header" class="navbar">
+      <a wicket:id="home" href="http://129.49.255.69:8888/gui">Home</a>
+      <a wicket:id="security" href="http://129.49.255.69:8888/gui/adminme">Security</a>
+      <div class="dropdown">
+        <button class="dropbtn">Collections<i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a wicket:id="collections" href="http://129.49.255.69:8888/gui/collections">Collections</a>
+          <a wicket:id="images" href="http://129.49.255.69:8888/gui/ListImages">Images</a>
+        </div>
+      </div>
+      <a wicket:id="sparql" href="http://129.49.255.69:8888/gui/sparql">SPARQL</a>
+      <a wicket:id="account" href="http://129.49.255.69:8888/gui/accountpage">Account</a>
+      <div class="dropdown">
+        <button class="dropbtn">Help<i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a wicket:id="about" href="http://129.49.255.69:8888/gui/about">About</a>
+        </div>
+      </div>
+      <a wicket:id="logout"
+         href="http://129.49.255.69:8888/auth/realms/Halcyon/protocol/openid-connect/logout?redirect_uri=http://129.49.255.69:8888/auth/realms/Halcyon/account/">Logout</a>
+    </div>
+  </wicket:panel>
+</div>
