@@ -1,0 +1,62 @@
+/* https://www.cssgenerators.net/?no=19&lang=en */
+.btnDark {
+  font-family: Arial;
+  font-size: 20px;
+  line-height: 30px;
+
+  display: inline-block;
+
+  width: 100px;
+  height: 30px;
+  padding: 12px;
+
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  text-indent: 0;
+
+  color: #fff;
+  border-width: 0;
+  border-style: solid;
+  border-color: #fff;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+      border-radius: 10px;
+  background: #4f4f4f;
+  background:    -o-linear-gradient(90deg, #4f4f4f, #5e5e5e);
+  background:  -moz-linear-gradient( center top, #4f4f4f 5%, #5e5e5e 100% );
+  background: -webkit-gradient( linear, left top, left bottom, color-stop(.05, #4f4f4f), color-stop(1, #5e5e5e) );
+  background: -webkit-linear-gradient(#4f4f4f, #5e5e5e);
+  background:   -ms-linear-gradient(#4f4f4f, #5e5e5e);
+  background:     linear-gradient(#4f4f4f, #5e5e5e);
+  -webkit-box-shadow: inset #787878 0 5px 8px -1px,#333 0 5px 0;
+     -moz-box-shadow: inset #787878 0 5px 8px -1px,#333 0 5px 0;
+      box-shadow: inset #787878 0 5px 8px -1px,#333 0 5px 0;
+  text-shadow: #7d7d7d 0 1px 0;
+
+  o-box-shadow: inset #787878 0 5px 8px -1px,#333 0 5px 0;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4f4f4f', endColorstr='#5e5e5e');
+}
+
+.btnDark:active {
+  position: relative;
+  top: 5px;;
+
+  -webkit-box-shadow: inset #787878 0 5px 8px -1px,#333 0 0 0;
+     -moz-box-shadow: inset #787878 0 5px 8px -1px,#333 0 0 0;
+      box-shadow: inset #787878 0 5px 8px -1px,#333 0 0 0;
+
+  o-box-shadow: inset #787878 0 5px 8px -1px,#333 0 0 0;
+}
+
+.btnDark:hover {
+  background: #5e5e5e;
+  background:    -o-linear-gradient(90deg, #5e5e5e, #4f4f4f);
+  background:  -moz-linear-gradient( center top, #5e5e5e 5%, #4f4f4f 100% );
+  background: -webkit-gradient( linear, left top, left bottom, color-stop(.05, #5e5e5e), color-stop(1, #4f4f4f) );
+  background: -webkit-linear-gradient(#5e5e5e, #4f4f4f);
+  background:   -ms-linear-gradient(#5e5e5e, #4f4f4f);
+  background:     linear-gradient(#5e5e5e, #4f4f4f);
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5e5e5e', endColorstr='#4f4f4f');
+}

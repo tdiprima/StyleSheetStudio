@@ -1,0 +1,62 @@
+/* https://www.cssgenerators.net/ */
+.btnAqua {
+  font-family: Arial;
+  font-size: 20px;
+  line-height: 30px;
+
+  display: inline-block;
+
+  width: 100px;
+  height: 30px;
+  padding: 13px;
+
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  text-indent: 0;
+
+  color: #fff;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #659dab;
+  -webkit-border-radius: 25px;
+     -moz-border-radius: 25px;
+      border-radius: 25px;
+  background: #2ef1ff;
+  background:    -o-linear-gradient(90deg, #2ef1ff, #3b9ceb);
+  background:  -moz-linear-gradient(center top, #2ef1ff 5%, #3b9ceb 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(.05, #2ef1ff), color-stop(1, #3b9ceb));
+  background: -webkit-linear-gradient(#2ef1ff, #3b9ceb);
+  background:   -ms-linear-gradient(#2ef1ff, #3b9ceb);
+  background:     linear-gradient(#2ef1ff, #3b9ceb);
+  -webkit-box-shadow: inset #fff 0 5px 8px -1px, #d6d6d6 1px 3px 2px;
+     -moz-box-shadow: inset #fff 0 5px 8px -1px, #d6d6d6 1px 3px 2px;
+      box-shadow: inset #fff 0 5px 8px -1px, #d6d6d6 1px 3px 2px;
+  text-shadow: #6daac2 2px 2px 0;
+
+  o-box-shadow: inset #fff 0 5px 8px -1px, #d6d6d6 1px 3px 2px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2ef1ff', endColorstr='#3b9ceb');
+}
+
+.btnAqua:active {
+  position: relative;
+  top: 3px;;
+
+  -webkit-box-shadow: inset #fff 0 5px 8px -1px, #d6d6d6 1px 0 2px;
+     -moz-box-shadow: inset #fff 0 5px 8px -1px, #d6d6d6 1px 0 2px;
+      box-shadow: inset #fff 0 5px 8px -1px, #d6d6d6 1px 0 2px;
+
+  o-box-shadow: inset #fff 0 5px 8px -1px, #d6d6d6 1px 0 2px;
+}
+
+.btnAqua:hover {
+  background: #3b9ceb;
+  background:    -o-linear-gradient(90deg, #3b9ceb, #2ef1ff);
+  background:  -moz-linear-gradient(center top, #3b9ceb 5%, #2ef1ff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(.05, #3b9ceb), color-stop(1, #2ef1ff));
+  background: -webkit-linear-gradient(#3b9ceb, #2ef1ff);
+  background:   -ms-linear-gradient(#3b9ceb, #2ef1ff);
+  background:     linear-gradient(#3b9ceb, #2ef1ff);
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3b9ceb', endColorstr='#2ef1ff');
+}
