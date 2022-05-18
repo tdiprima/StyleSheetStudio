@@ -10,8 +10,8 @@ h1 {
 /*FONT!*/
 body {
   font-family: effra, Verdana, Tahoma, 'DejaVu Sans', sans-serif;
-  /*font-family: 'Montserrat-SemiBold', 'Montserrat', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';*/
-  /*font-family: Poppins, sans-serif;*/
-  /*font-family: 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';*/
-  /*font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;*/
+  font-family: 'Montserrat-SemiBold', 'Montserrat', 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
+  font-family: Poppins, sans-serif;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
 }
