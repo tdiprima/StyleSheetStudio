@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>basic box</title>
+  <style>
+    body {
+      margin: 40px;
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 600px 600px;
+      grid-gap: 10px;
+      background-color: #fff;
+      color: #444;
+    }
+
+    .box {
+      background-color: #fff;
+      color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      font-size: 150%;
+    }
+
+    .dragon {
+      width : 600px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="box dragon" id="seadragon-viewer0"></div>
+  <div class="box dragon" id="seadragon-viewer1"></div>
+  <div class="box dragon" id="seadragon-viewer2"></div>
+  <div class="box dragon" id="seadragon-viewer3"></div>
+</div>
+
+<script src="//openseadragon.github.io/openseadragon/openseadragon.min.js"></script>
+<script>
+  const duomo = {
+    Image: {
+      xmlns: "http://schemas.microsoft.com/deepzoom/2008",
+      Url: "//openseadragon.github.io/example-images/duomo/duomo_files/",
+      Format: "jpg",
+      Overlap: "2",
+      TileSize: "256",
+      Size: {
+        Width: "13920",
+        Height: "10200"
+      }
+    }
+  };
+
+  OpenSeadragon({
+    id: "seadragon-viewer0",
+    prefixUrl: "//openseadragon.github.io/openseadragon/images/",
+    tileSources: duomo
+  });
+  OpenSeadragon({
+    id: "seadragon-viewer1",
+    prefixUrl: "//openseadragon.github.io/openseadragon/images/",
+    tileSources: duomo
+  });
+  OpenSeadragon({
+    id: "seadragon-viewer2",
+    prefixUrl: "//openseadragon.github.io/openseadragon/images/",
+    tileSources: duomo
+  });
+  OpenSeadragon({
+    id: "seadragon-viewer3",
+    prefixUrl: "//openseadragon.github.io/openseadragon/images/",
+    tileSources: duomo
+  });
+</script>
+</body>
+</html>

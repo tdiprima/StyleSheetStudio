@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Div Layout</title>
+  <!-- https://stackoverflow.com/questions/29251961/dynamic-div-layout/29252379#29252379 -->
+  <style>
+    #wrapper {
+      width: 80%;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #000000;
+      display: table;
+    }
+
+    #parent {
+      text-align: center;
+      white-space: nowrap;
+      font-size: 1em;
+      line-height: .6em;
+      overflow: hidden;
+      width: 100%;
+      margin: 0 0 30px 0;
+    }
+
+    .child {
+      width: 120px;
+      height: 75px;
+      border: solid 1px #000;
+      display: inline-block;
+      letter-spacing: normal;
+      font-size: normal;
+      white-space: normal;
+      text-align: normal;
+      vertical-align: middle;
+      margin: 5px 25px 20px 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+
+    <div id="parent">
+      <div class="child">
+        <img src='http://www.emojibase.com/resources/img/emojis/gemoji/274c.png' />
+        <p>field 1</p>
+        </a>
+      </div>
+
+      <div class="child">
+        <img src='http://www.emojibase.com/resources/img/emojis/gemoji/274c.png' />
+        <p>field 2</p>
+        </a>
+      </div>
+
+      <!-- <div class="child">
+        <img src='http://www.emojibase.com/resources/img/emojis/gemoji/274c.png' />
+        <p>field 3</p>
+        </a>
+      </div> -->
+    </div>
+
+    <div id="parent">
+      <div class="child">
+        <img src='http://www.emojibase.com/resources/img/emojis/gemoji/274c.png' />
+        <p>field 4</p>
+        </a>
+      </div>
+
+      <div class="child">
+        <img src='http://www.emojibase.com/resources/img/emojis/gemoji/274c.png' />
+        <p>field 5</p>
+        </a>
+      </div>
+
+      <!-- <div class="child">
+        <img src='http://www.emojibase.com/resources/img/emojis/gemoji/274c.png' />
+        <p>field 6</p>
+        </a>
+      </div> -->
+    </div>
+
+  </div>
+</body>
+
+</html>

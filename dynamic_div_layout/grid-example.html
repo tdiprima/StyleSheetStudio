@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Defining a Grid</title>
+  <!--
+    https://gridbyexample.com/examples/
+    https://gridbyexample.com/examples/example1/
+  -->
+  <style>
+    body {
+      font-family: Poppins, sans-serif;
+      margin: 40px;
+    }
+
+    .wrapper {
+      display: grid;
+      color: #444;
+      background-color: #fff;
+      /* grid-template-columns: 100px 100px 100px; */
+      grid-template-columns: 100px 100px;
+      grid-gap: 10px;
+    }
+
+    .box {
+      font-size: 150%;
+      padding: 20px;
+      color: #fff;
+      border-radius: 5px;
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Defining a Grid</h2>
+
+<div class="wrapper">
+  <div class="box a">A</div>
+  <div class="box b">B</div>
+  <!-- <div class="box c">C</div> -->
+  <div class="box d">D</div>
+  <div class="box e">E</div>
+  <!-- <div class="box f">F</div> -->
+</div>
+
+</body>
+</html>
