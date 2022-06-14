@@ -1,0 +1,30 @@
+/*https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/*/
+/*https://www.timellenberger.com/blog/operating-system-dark-mode-in-your-css*/
+/*https://www.geeksforgeeks.org/how-to-make-dark-mode-for-websites-using-html-css-javascript/*/
+/*https://fjolt.com/article/css-auto-dark-mode*/
+/*https://www.thecodehubs.com/how-to-detect-the-os-dark-light-mode-in-html/*/
+/*https://dev.to/laurilllll/how-to-create-dark-mode-using-only-css-2cb4*/
+/*https://blog.4d.com/css-media-query-for-a-dark-or-light-ui/*/
+
+:root {
+  color-scheme: light dark;
+}
+
+:root {
+  --body-color: #E4E9F7;
+  --nav-color: #4070F4;
+  --side-nav: #010718;
+  --text-color: #FFF;
+  --search-bar: #F2F2F2;
+  --search-text: #010718;
+}
+
+body.dark {
+  --body-color: #18191A;
+  --text-color: #CCC;
+}
+
+os-dark {
+  color: #fbfbfe;
+  background-color: #1c1b22;
+}
