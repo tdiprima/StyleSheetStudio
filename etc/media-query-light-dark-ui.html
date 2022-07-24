@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<!-- <title></title> -->
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://blog.4d.com/xmlrpc.php" />
+<meta name="description" content="All the latest tech info by our 4D bloggers: feature presentation with database examples, videos, technical info, and updates on events."/>
+<link rel="shortcut icon" href="https://blog.4d.com/wp-content/uploads/2016/09/favicon.png">
+		
+<!--[if lt IE 9]>
+<script src="https://blog.4d.com/wp-content/themes/palmas/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<title>CSS Media query for a dark or light UI &#8211; 4D Blog</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//translate.google.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="4D Blog &raquo; Feed" href="https://blog.4d.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="4D Blog &raquo; Comments Feed" href="https://blog.4d.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blog.4d.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://blog.4d.com/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='default-css'  href='https://blog.4d.com/wp-content/plugins/fourd-highlighter/dist/default.min.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='code4d-css'  href='https://blog.4d.com/wp-content/plugins/fourd-highlighter/assets/css/code4d.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='google-language-translator-css'  href='https://blog.4d.com/wp-content/plugins/google-language-translator/css/style.css?ver=6.0.9' type='text/css' media='' />
+<link rel='stylesheet' id='pc_google_analytics-frontend-css'  href='https://blog.4d.com/wp-content/plugins/pc-google-analytics/assets/css/frontend.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='plm-user-css-css'  href='https://blog.4d.com/wp-content/plugins/pl-manager/css/frontend/style.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='plm-font-awesome-css-css'  href='https://blog.4d.com/wp-content/plugins/pl-manager/css/backend/font-awesome.min.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bb-tcs-editor-style-shared-css'  href='https://blog.4d.com/wp-content/themes/palmas/editor-style-shared.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='search-filter-chosen-styles-css'  href='https://blog.4d.com/wp-content/plugins/search-filter-pro/public/assets/css/chosen.min.css?ver=1.4.3' type='text/css' media='all' />
+<link rel='stylesheet' id='search-filter-plugin-styles-css'  href='https://blog.4d.com/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css?ver=1.4.3' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='https://blog.4d.com/wp-content/themes/palmas/style.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-css'  href='https://blog.4d.com/wp-content/themes/palmas/responsive.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://blog.4d.com/wp-content/themes/palmas/fonts/font-awesome.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='Roboto-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C700%2C700italic%2C900%2C900italic&#038;ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='Nixie_One-css'  href='https://fonts.googleapis.com/css?family=Nixie+One%3A400&#038;ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='Karla-css'  href='https://fonts.googleapis.com/css?family=Karla%3A400%2C400italic%2C700%2C700italic&#038;ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css'  href='https://blog.4d.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/fourd-highlighter/dist/highlight.min.js?ver=5.7.2' id='highlight-min-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/fourd-highlighter/assets/js/code4d.js?ver=5.7.2' id='code4d-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/fourd-highlighter/assets/js/fourd.js?ver=5.7.2' id='fourd-js'></script>
+<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js?ver=5.7.2' id='jQuery-js'></script>
+<script type='text/javascript' id='tarteaucitronjs-js-extra'>
+/* <![CDATA[ */
+var tarteaucitronBO = {"lang":{"bigPrivacy":"<h2 class=\"titlePopup\">We value your privacy<\/h2>\r\n<p id=\"tarteaucitronDisclaimerAlert\" class=\"cokkies-content\"><span id=\"tarteaucitronDisclaimerAlert\">We use cookies to ensure we give you the best experience on our website.<\/span><\/p>\r\n<p class=\"cokkies-content\"><span id=\"tarteaucitronDisclaimerAlert\"> These cookies help us collect audience statistics, offer you services tailored to your interests or targeted advertising, and provide you with social networking features. To learn more about your personal data management, <a title=\"click on this link\" href=\"https:\/\/blog.4d.com\/cookie-policy\/\">click on this link.<\/a><\/span><\/p>\r\n<p>&nbsp;<\/p>","middleBarHead":"","adblock":"","adblock_call":"","reload":"","alertBigScroll":"","alertBigClick":"","alertBig":"","alertBigPrivacy":"","alertSmall":"Manage services","personalize":"Personalize","acceptAll":"OK, accept all","setCookies":"Set the cookies","saveConfig":"Save configurations","close":"Close","privacyUrl":"Privacy policy","all":"Preference for all services","info":"If you continue to browse this website,","disclaimer":"By allowing these third-party services, you accept their cookies and the use of tracking technologies necessary for their proper functioning. ","allow":"Allow","deny":"Deny","noCookie":"This service does not use cookie.","useCookie":"This service can install","useCookieCurrent":"This service has installed","useNoCookie":"This service has not installed any cookie.","more":"Read more","source":"View the official website","credit":"Cookies manager by tarteaucitron.js","noServices":"This website does not use any cookie requiring your consent.","toggleInfoBox":"Show\/hide informations about cookie storage","title":"Cookies management panel","cookieDetail":"Cookie detail for","ourSite":"on our site","newWindow":"(new window)","allowAll":"Allow all","denyAll":"Deny all","fallback":"is disabled.","mandatoryTitle":"Mandatory cookies","mandatoryText":"This site uses cookies necessary for its proper functioning which cannot be deactivated.","ads":{"title":"Advertising network","details":"Ad networks can generate revenue by selling advertising space on the site."},"analytic":{"title":"Audience measurement","details":"The audience measurement services used to generate useful statistics attendance to improve the site."},"social":{"title":"Social networks","details":"Social networks can improve the usability of the site and help to promote it via the shares."},"video":{"title":"Videos","details":"Video sharing services help to add rich media on the site and increase its visibility."},"comment":{"title":"comments","details":"Comments managers facilitate the filing of comments and fight against spam."},"support":{"title":"Support","details":"Support services allow you to get in touch with the site team and help to improve it."},"api":{"title":"APIs","details":"APIs are used to load scripts: geolocation, search engines, translations, ..."},"marketing":{"title":"Marketing","details":"Marketing can improve the usability of the site and help to promote it via the shares."},"other":{"title":"other","details":"Services to display web content."}},"fourdCss":"1","currentLang":"en_US","activetTarteaucitron":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/qtdTarteaucitronjs/fourdTarteaucitron.js?ver=5.7.2' id='tarteaucitronjs-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/qtdTarteaucitronjs/js/config-tarteaucitron.js?ver=5.7.2' id='configTarteaucitron-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/jquery-updater/js/jquery-3.6.0.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/jquery-updater/js/jquery-migrate-3.3.2.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1' id='addtoany-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/pc-google-analytics/assets/js/frontend.min.js?ver=1.0.0' id='pc_google_analytics-frontend-js'></script>
+<script type='text/javascript' id='plm-user-script-js-js-extra'>
+/* <![CDATA[ */
+var plm_admin_ajax = {"ajax_url":"https:\/\/blog.4d.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/pl-manager/js/frontend/script.js?ver=5.7.2' id='plm-user-script-js-js'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.4d.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.4d.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.7.2" />
+<link rel="canonical" href="https://blog.4d.com/css-media-query-for-a-dark-or-light-ui/" />
+<link rel='shortlink' href='https://blog.4d.com/?p=30038' />
+<link rel="alternate" type="application/json+oembed" href="https://blog.4d.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.4d.com%2Fcss-media-query-for-a-dark-or-light-ui%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://blog.4d.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.4d.com%2Fcss-media-query-for-a-dark-or-light-ui%2F&#038;format=xml" />
+
+<script data-cfasync="false">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+(function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
+</script>
+<style type="text/css">p.hello { font-size:12px; color:darkgray; }#google_language_translator, #flags { text-align:left; }#google_language_translator { clear:both; }#flags { width:165px; }#flags a { display:inline-block; margin-right:2px; }#google_language_translator a {display: none !important; }.goog-te-gadget {color:transparent !important;}.goog-te-gadget { font-size:0px !important; }.goog-branding { display:none; }.goog-tooltip {display: none !important;}.goog-tooltip:hover {display: none !important;}.goog-text-highlight {background-color: transparent !important; border: none !important; box-shadow: none !important;}#google_language_translator { display:none; }#google_language_translator select.goog-te-combo { color:#32373c; }.goog-te-banner-frame{visibility:hidden !important;}body { top:0px !important;}#glt-translate-trigger { left:20px; right:auto; }#glt-translate-trigger > span { color:#ffffff; }#glt-translate-trigger { background:#f89406; }.goog-te-gadget .goog-te-combo { width:100%; }</style>	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-9073736-7', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
+	 <style>
+		  a.plm-click.plm-like{color: #239b9b}
+		  a.plm-click.plm-unlike{color: #239b9b}
+		  a.plm-click.plm-like:hover{color: #000}
+		  a.plm-click.plm-unlike:hover{color: #000}
+		  .plm-btn-holder {font-size: 15px;}
+		  .plm-btn-holder .status{font-size: 15px;}
+	 </style>
+	 <style id="apply-customizer-css" >
+</style>
+
+<!--[if lt IE 9]>
+<script src="https://blog.4d.com/wp-content/themes/palmas/js/selectivizr-min.js" type="text/javascript"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="https://blog.4d.com/wp-content/themes/palmas/js/respond.min.js" type="text/javascript"></script>
+<![endif]-->
+
+</head>
+
+<body class="post-template-default single single-post postid-30038 single-format-standard left-sidebar group-blog">
+<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header sticky-nav" role="banner">
+				<hgroup class="logo boxed">
+					<h2 class="no-heading-style"><a href="https://blog.4d.com/" title="4D Blog" >
+				<img src="https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal.png" alt="4D Blog" /></a></h2>
+		        <!-- <div class="menu-btn off-menu fa fa-align-justify" data-effect="st-effect-4"></div> -->
+		</hgroup>
+        <div class="header-right">
+		<nav role="navigation" class="site-navigation primary-navigation group">
+					</nav><!-- .site-navigation .main-navigation -->
+        </div>
+	</header><!-- #masthead .site-header -->
+                
+       <div id="bg-main">
+	<div id="main" class="site-main boxed group">
+		<div id="primary" class="content-area boxed">
+			<div id="breadcrumbs"> <a href="https://blog.4d.com">Home</a> <a href="https://blog.4d.com/category/tips/">Tips</a> CSS Media query for a dark or light UI</div>			<div id="content" class="site-content" role="main">
+
+											<article id="post-30038" class="group post-30038 post type-post status-publish format-standard has-post-thumbnail hentry category-tips tag-ui tag-v19 first-post">
+	<header class="entry-header">
+		<h1 class="entry-title">CSS Media query for a dark or light UI</h1>
+        <div class="entry-meta">
+		<i class="fa fa-clock-o" aria-hidden="true"></i>
+		<time class="entry-date" datetime="2021-05-19T07:00:04+00:00">May 19, 2021</time>
+		 <br><br>
+
+		</div><!-- .entry-meta -->
+		<div class="thumbnail">
+			<span class="post-cats"><a href="https://blog.4d.com/category/tips/" rel="category tag">Tips</a></span>
+		    	<a href="https://blog.4d.com/css-media-query-for-a-dark-or-light-ui/" title="CSS Media query for a dark or light UI" class="home-thumb boxed" >
+    	<img width="900" height="450" src="https://blog.4d.com/wp-content/uploads/2021/03/tip_CSS.png" class="attachment-large size-large wp-post-image" alt="" loading="lazy" srcset="https://blog.4d.com/wp-content/uploads/2021/03/tip_CSS.png 1000w, https://blog.4d.com/wp-content/uploads/2021/03/tip_CSS-300x150.png 300w, https://blog.4d.com/wp-content/uploads/2021/03/tip_CSS-768x384.png 768w" sizes="(max-width: 900px) 100vw, 900px" />    	</a>
+        <div class="no-thumb"></div>
+            	</div>
+	</header><!-- .entry-header -->
+	<div class="translate-message">
+	    Automatically translated from English	</div>
+	<div class="entry-content boxed">
+		<div class="aParent">
+		<p>Dark mode has been gaining a lot of ground recently. That&#8217;s why we&#8217;ve added support for it in 4D v19, and mentioned a few ways you can adjust it to your needs in the related announcement.</p>
+<p>In this blog post, we&#8217;ll focus on <a href="https://blog.4d.com/project-databases-style-sheet/">CSS</a> and explain in detail how to set CSS styles for light and dark modes using CSS media queries.</p>
+<p><span id="more-30038"></span></p>
+<h2>What is a Media Query?</h2>
+<p>In CSS, media queries are useful when you want to modify your application’s look depending on specific characteristics. 4D supports the <strong>prefers-color-scheme</strong> media feature, so you can define the behavior of a dialog in light and dark mode.</p>
+<h2>DEMO TIME</h2>
+<p>Let&#8217;s take an example. In the <a href="https://github.com/4d-depot/EA_Contacts">Contacts application</a>, here’s what the light appearance looks like on macOS:<span style="color: #ff0000;"><br />
+</span></p>
+<p><img loading="lazy" class="aligncenter  wp-image-29308" src="https://blog.4d.com/wp-content/uploads/2020/12/ContactLight.png" alt="" width="710" height="442" srcset="https://blog.4d.com/wp-content/uploads/2020/12/ContactLight.png 2662w, https://blog.4d.com/wp-content/uploads/2020/12/ContactLight-300x187.png 300w, https://blog.4d.com/wp-content/uploads/2020/12/ContactLight-1024x638.png 1024w, https://blog.4d.com/wp-content/uploads/2020/12/ContactLight-768x478.png 768w, https://blog.4d.com/wp-content/uploads/2020/12/ContactLight-1536x957.png 1536w, https://blog.4d.com/wp-content/uploads/2020/12/ContactLight-2048x1276.png 2048w" sizes="(max-width: 710px) 100vw, 710px" /></p>
+<p>&nbsp;</p>
+<h3>Step 1</h3>
+<p>To change the design of this application, we chose:</p>
+<ul style="list-style-type: disc;">
+<li>four colors for text and lines</li>
+<li>three colors for the background</li>
+</ul>
+<p>&nbsp;</p>
+<p>We defined these colors in a CSS file called &#8220;styleSheets.css&#8221;. Here’s what it contains:</p>
+<pre>	.accentColor1 {
+		stroke: #8594B2;
+	}
+
+	.accentColor2 {
+		stroke: #DDDDDD;
+	}
+
+	.accentColor3 {
+		stroke: #EEEEEE;
+	}
+
+	.accentColor4 {
+		stroke: #C0C0C0;
+	}
+
+	.accentBackColor1 {
+		fill: #AAAAAA;
+	}
+
+	.accentBackColor2 {
+		fill: #EEEEEE;
+	}
+
+	.accentBackColor3 {
+		fill: #444444;
+	}
+</pre>
+<p>Each color has a corresponding class named &#8220;accentColorX&#8221; or accentBackColorX&#8221;.</p>
+<p>Then, inside the property list, we assigned a CSS class to each form object:</p>
+<p><img loading="lazy" class="aligncenter  wp-image-30039" src="https://blog.4d.com/wp-content/uploads/2021/03/FormAccentColor.png" alt="" width="647" height="591" srcset="https://blog.4d.com/wp-content/uploads/2021/03/FormAccentColor.png 2002w, https://blog.4d.com/wp-content/uploads/2021/03/FormAccentColor-300x274.png 300w, https://blog.4d.com/wp-content/uploads/2021/03/FormAccentColor-1024x935.png 1024w, https://blog.4d.com/wp-content/uploads/2021/03/FormAccentColor-768x701.png 768w, https://blog.4d.com/wp-content/uploads/2021/03/FormAccentColor-1536x1403.png 1536w" sizes="(max-width: 647px) 100vw, 647px" /></p>
+<h3>Step 2</h3>
+<p>We turned on Dark Mode on macOS. Here’s the result:</p>
+<p><img loading="lazy" class="aligncenter  wp-image-30045" src="https://blog.4d.com/wp-content/uploads/2021/03/ContactManager1.png" alt="" width="775" height="483" srcset="https://blog.4d.com/wp-content/uploads/2021/03/ContactManager1.png 2662w, https://blog.4d.com/wp-content/uploads/2021/03/ContactManager1-300x187.png 300w, https://blog.4d.com/wp-content/uploads/2021/03/ContactManager1-1024x638.png 1024w, https://blog.4d.com/wp-content/uploads/2021/03/ContactManager1-768x478.png 768w, https://blog.4d.com/wp-content/uploads/2021/03/ContactManager1-1536x957.png 1536w, https://blog.4d.com/wp-content/uploads/2021/03/ContactManager1-2048x1276.png 2048w" sizes="(max-width: 775px) 100vw, 775px" /></p>
+<p>The form objects have automatically switched to Dark Mode. However, the color of the <strong>Name </strong>label doesn’t go well with the dark background, and the light grey frame doesn’t fit in well either.</p>
+<p>We need to change the color set. After a few tests, we finally have our four text colors and our three background colors.</p>
+<h3>Step 3</h3>
+<p>It’s time to define these colors so that:</p>
+<ul>
+<li>if the interface is in light mode, 4D uses a certain set of colors</li>
+<li>if the interface is in dark mode, 4D uses another set of colors</li>
+</ul>
+<p>&nbsp;</p>
+<p>Media queries are useful when you need to conditionally apply styles to the forms. You can wrap the light theme CSS classes inside a media query with a value set to <strong>light</strong>, and the dark theme CSS classes inside a media query with a value set to <strong>dark</strong>:</p>
+<pre><span style="background-color: #ffff99;">@media (prefers-color-scheme: light)</span>{
+	.accentColor1 {
+		stroke: #8594B2;
+	}
+
+	.accentColor2 {
+		stroke: #DDDDDD;
+	}
+
+	.accentColor3 {
+		stroke: #EEEEEE;
+	}
+
+	.accentColor4 {
+		stroke: #C0C0C0;
+	}
+
+	.accentBackColor1 {
+		fill: #AAAAAA;
+	}
+
+	.accentBackColor2 {
+		fill: #EEEEEE;
+	}
+
+	.accentBackColor3 {
+		fill: #444444;
+	}
+}
+<span style="background-color: #ffff99;">
+@media (prefers-color-scheme: dark)</span>{
+	.accentColor1 {
+		stroke: #A1BFFC;
+	}
+
+	.accentColor2 {
+		stroke: #4C4C4D;
+	}
+
+	.accentColor3 {
+		stroke: #4D4D4D;
+	}
+
+	.accentColor4 {
+		stroke: #46484A
+	}
+
+	.accentBackColor1 {
+		fill: #7F7E7F;
+	}
+
+	.accentBackColor2 {
+		fill: #444444;
+	}
+
+	.accentBackColor3 {
+		fill: #CBCACB;
+	}
+}
+</pre>
+<p>And this is what we get:</p>
+<p><img loading="lazy" class="aligncenter  wp-image-29309" src="https://blog.4d.com/wp-content/uploads/2020/12/ContactDark.png" alt="" width="872" height="543" srcset="https://blog.4d.com/wp-content/uploads/2020/12/ContactDark.png 2662w, https://blog.4d.com/wp-content/uploads/2020/12/ContactDark-300x187.png 300w, https://blog.4d.com/wp-content/uploads/2020/12/ContactDark-1024x638.png 1024w, https://blog.4d.com/wp-content/uploads/2020/12/ContactDark-768x478.png 768w, https://blog.4d.com/wp-content/uploads/2020/12/ContactDark-1536x957.png 1536w, https://blog.4d.com/wp-content/uploads/2020/12/ContactDark-2048x1276.png 2048w" sizes="(max-width: 872px) 100vw, 872px" /></p>
+<p>&nbsp;</p>
+<h2>What&#8217;s next?</h2>
+<p>If you need help with CSS in 4D, we advise you to read this <a href="https://blog.4d.com/project-databases-style-sheet/">blog post</a> or watch this 30 minutes <a href="https://www.youtube.com/watch?v=3Hk4FUQENyQ">4D Summit video</a>.</p>
+<p>And as always, you can join the discussion on the <a href="https://discuss.4d.com/">4D </a><a href="https://discuss.4d.com/">forum</a>.</p>
+<p>&nbsp;</p>
+<div class="addtoany_share_save_container addtoany_content addtoany_content_bottom"><div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://blog.4d.com/css-media-query-for-a-dark-or-light-ui/" data-a2a-title="CSS Media query for a dark or light UI"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fblog.4d.com%2Fcss-media-query-for-a-dark-or-light-ui%2F&amp;linkname=CSS%20Media%20query%20for%20a%20dark%20or%20light%20UI" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fblog.4d.com%2Fcss-media-query-for-a-dark-or-light-ui%2F&amp;linkname=CSS%20Media%20query%20for%20a%20dark%20or%20light%20UI" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fblog.4d.com%2Fcss-media-query-for-a-dark-or-light-ui%2F&amp;linkname=CSS%20Media%20query%20for%20a%20dark%20or%20light%20UI" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fblog.4d.com%2Fcss-media-query-for-a-dark-or-light-ui%2F&amp;linkname=CSS%20Media%20query%20for%20a%20dark%20or%20light%20UI" title="Email" rel="nofollow noopener" target="_blank"></a></div></div>		<div class="discuss addtoany_share_save_container addtoany_content addtoany_content_bottom"><a class="discuss" href="https://discuss.4d.com/" target="_blank" title="Discuss">Discuss</a></div>
+		</div>
+		<div class="div-tags">
+				        <p class="post-tags"><span class="inline-icon-tag hidden-text-icon">Tags</span> <a href="https://blog.4d.com/tag/ui/" rel="tag">UI</a>, <a href="https://blog.4d.com/tag/v19/" rel="tag">v19</a></p>
+							</div>
+
+		<!-- .entry-content -->
+	</div>
+
+
+
+
+
+    <aside class="related-box boxed">
+		<h3 class="section-title">Latest posts</h3>
+		<ul>			<li class="clearfix boxed" >
+				<div class="entry-header">
+					<div class="entry-meta">
+						<i class="fa fa-clock-o" aria-hidden="true"></i>
+						<time class="entry-date" datetime="2022-06-20T06:04:11+00:00">June 20, 2022</time>					</div><!-- .entry-meta -->
+					<h2 class="no-heading-style entry-title"><a href="https://blog.4d.com/github-4d-awesome-list-call-for-contributions/" title="Permalink to GitHub 4D Awesome List — Call for Contributions" rel="bookmark">GitHub 4D Awesome List — Call for Contributions</a></h2>
+				</div><!-- .entry-header -->
+			</li>
+					<li class="clearfix boxed" >
+				<div class="entry-header">
+					<div class="entry-meta">
+						<i class="fa fa-clock-o" aria-hidden="true"></i>
+						<time class="entry-date" datetime="2022-06-13T06:00:42+00:00">June 13, 2022</time>					</div><!-- .entry-meta -->
+					<h2 class="no-heading-style entry-title"><a href="https://blog.4d.com/4d-and-git-from-beginner-to-expert/" title="Permalink to 4D and Git: From Beginner to Expert" rel="bookmark">4D and Git: From Beginner to Expert</a></h2>
+				</div><!-- .entry-header -->
+			</li>
+					<li class="clearfix boxed" >
+				<div class="entry-header">
+					<div class="entry-meta">
+						<i class="fa fa-clock-o" aria-hidden="true"></i>
+						<time class="entry-date" datetime="2022-06-07T07:00:16+00:00">June 7, 2022</time>					</div><!-- .entry-meta -->
+					<h2 class="no-heading-style entry-title"><a href="https://blog.4d.com/github-4d-depot/" title="Permalink to How to browse GitHub to find all 4D projects" rel="bookmark">How to browse GitHub to find all 4D projects</a></h2>
+				</div><!-- .entry-header -->
+			</li>
+		</ul>    </aside>
+
+	<footer class="boxed">
+				<div style="float:left; max-width : 150px; margin-right: 30px;" ><img src="https://blog.4d.com/wp-content/uploads/2016/10/Vanessa-Talbot.jpg" alt="Vanessa Talbot" class="avatar avatar- wp-user-avatar wp-user-avatar- alignnone photo" /></div>
+        <div class="title-user"><a href="https://blog.4d.com/author/vanessa/" title="Posts by Vanessa Talbot" rel="author">Vanessa Talbot</a></div>
+		<div class="author-description"><p>• Product Owner •</p><p>Vanessa Talbot joined 4D Program team in June, 2014. As a Product Owner, she is in charge of writing the user stories then translating it  to functional specifications. Her role is also to make sure that the feature implementation delivered is meeting the customer need.</p>Since her arrival, she has worked to define key features in 4D. She has worked on most of preemptive multi-threading new features and also on a very complex subject: the new architecture for engined application. Vanessa has a degree from Telecom Saint-Etienne. She began her career at the Criminal Research Institute as a developer for the audiovisual department. She has also worked in media and medical fields as expert in technical support, production as well as documenting new features.</div>
+	</footer><!-- .entry-meta -->
+</article><!-- #post-30038 -->
+				
+			
+			</div><!-- #content .site-content -->
+		</div><!-- #primary .content-area -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+						<aside id="text-4" class="widget widget_text">			<div class="textwidget"><div id="flags" class="size18"><ul id="sortable" class="ui-sortable" style="float:left"><li id="Czech"><a href="#" title="Czech" class="nturl notranslate cs flag Czech"></a></li><li id="English"><a href="#" title="English" class="nturl notranslate en flag English"></a></li><li id="French"><a href="#" title="French" class="nturl notranslate fr flag French"></a></li><li id="German"><a href="#" title="German" class="nturl notranslate de flag German"></a></li><li id="Italian"><a href="#" title="Italian" class="nturl notranslate it flag Italian"></a></li><li id="Japanese"><a href="#" title="Japanese" class="nturl notranslate ja flag Japanese"></a></li><li id="Portuguese"><a href="#" title="Portuguese" class="nturl notranslate pt flag Portuguese"></a></li><li id="Spanish"><a href="#" title="Spanish" class="nturl notranslate es flag Spanish"></a></li></ul></div><div id="google_language_translator" class="default-language-en"></div>
+<div class="providedby">translated by <a class="goog-logo-link" href="https://translate.google.com" target="_blank" rel="noopener"><img src="/wp-content/themes/palmas/img/google.png" style="padding-right: 3px" width="37px" height="14px"></a></div><div style="clear:both"></div></div>
+		</aside><aside id="search-2" class="widget widget_search"><form method="get" class="searchform search-form" action="https://blog.4d.com/">
+	<fieldset> 
+		<input type="text" name="s" class="s" value="" placeholder="Search here"> 
+		<button class="fa fa-search search-button" type="submit" value="Search"></button>
+	</fieldset>
+</form></aside><aside id="text-2" class="widget widget_text"><h3 class="widget-title">Categories</h3>			<div class="textwidget"><form action="" method="post" class="searchandfilter" data-sf-form-id="10" data-use-history-api="1" data-template-loaded="0" data-lang-code="" data-display-results="archive" data-auto-update="1" data-page-slug="sft" id="search-filter-form-10"><ul><li class="sf-field-category" data-sf-field-name="category" data-sf-field-type="category" data-sf-field-input-type="checkbox"><ul data-operator="and">	<li class="sf-item-12"><label><input type='checkbox' name='_sft_category[]' value='events' data-sf-cr='_sft_12' data-sf-hide-empty='0' /> Events</label>
+</li>
+	<li class="sf-item-160"><label><input type='checkbox' name='_sft_category[]' value='guest_posts' data-sf-cr='_sft_160' data-sf-hide-empty='0' /> Guest Post</label>
+</li>
+	<li class="sf-item-10"><label><input type='checkbox' name='_sft_category[]' value='news' data-sf-cr='_sft_10' data-sf-hide-empty='0' /> News</label>
+</li>
+	<li class="sf-item-11"><label><input type='checkbox' name='_sft_category[]' value='product' data-sf-cr='_sft_11' data-sf-hide-empty='0' /> Product</label>
+</li>
+	<li class="sf-item-74"><label><input type='checkbox' name='_sft_category[]' value='tips' data-sf-cr='_sft_74' data-sf-hide-empty='0' /> Tips</label>
+</li>
+</ul></li><input type="hidden" name="_sf_submitted" value="1" /><input type="hidden" name="_sf_form_id" value="10" class="sf_form_id" /></ul></form></div>
+		</aside>
+								<aside id="tag_cloud-2" class="widget widget_tag_cloud sidebar-desktop"><h3 class="widget-title">Tags</h3><div class="tagcloud"><a href="https://blog.4d.com/tag/4d-for-android/" class="tag-cloud-link tag-link-282 tag-link-position-1" style="font-size: 11.7pt;" aria-label="4D for Android (13 items)">4D for Android</a>
+<a href="https://blog.4d.com/tag/4d-for-ios/" class="tag-cloud-link tag-link-115 tag-link-position-2" style="font-size: 17.2pt;" aria-label="4D for iOS (49 items)">4D for iOS</a>
+<a href="https://blog.4d.com/tag/4d-server/" class="tag-cloud-link tag-link-144 tag-link-position-3" style="font-size: 8.7pt;" aria-label="4D server (6 items)">4D server</a>
+<a href="https://blog.4d.com/tag/4d-summit/" class="tag-cloud-link tag-link-80 tag-link-position-4" style="font-size: 13pt;" aria-label="4D Summit (18 items)">4D Summit</a>
+<a href="https://blog.4d.com/tag/4d-view-pro/" class="tag-cloud-link tag-link-29 tag-link-position-5" style="font-size: 16.6pt;" aria-label="4D View Pro (43 items)">4D View Pro</a>
+<a href="https://blog.4d.com/tag/4d-write-pro/" class="tag-cloud-link tag-link-6 tag-link-position-6" style="font-size: 19.6pt;" aria-label="4D Write Pro (87 items)">4D Write Pro</a>
+<a href="https://blog.4d.com/tag/administration/" class="tag-cloud-link tag-link-168 tag-link-position-7" style="font-size: 11.3pt;" aria-label="Administration (12 items)">Administration</a>
+<a href="https://blog.4d.com/tag/api/" class="tag-cloud-link tag-link-217 tag-link-position-8" style="font-size: 8.7pt;" aria-label="API (6 items)">API</a>
+<a href="https://blog.4d.com/tag/build-application/" class="tag-cloud-link tag-link-309 tag-link-position-9" style="font-size: 10.2pt;" aria-label="Build application (9 items)">Build application</a>
+<a href="https://blog.4d.com/tag/class/" class="tag-cloud-link tag-link-205 tag-link-position-10" style="font-size: 12pt;" aria-label="Class (14 items)">Class</a>
+<a href="https://blog.4d.com/tag/client-server/" class="tag-cloud-link tag-link-155 tag-link-position-11" style="font-size: 11pt;" aria-label="Client/Server (11 items)">Client/Server</a>
+<a href="https://blog.4d.com/tag/code-editor/" class="tag-cloud-link tag-link-120 tag-link-position-12" style="font-size: 12.5pt;" aria-label="Code editor (16 items)">Code editor</a>
+<a href="https://blog.4d.com/tag/collections/" class="tag-cloud-link tag-link-105 tag-link-position-13" style="font-size: 12.5pt;" aria-label="Collections (16 items)">Collections</a>
+<a href="https://blog.4d.com/tag/database/" class="tag-cloud-link tag-link-17 tag-link-position-14" style="font-size: 15.9pt;" aria-label="Database (36 items)">Database</a>
+<a href="https://blog.4d.com/tag/encryption/" class="tag-cloud-link tag-link-129 tag-link-position-15" style="font-size: 8pt;" aria-label="Encryption (5 items)">Encryption</a>
+<a href="https://blog.4d.com/tag/export/" class="tag-cloud-link tag-link-26 tag-link-position-16" style="font-size: 9.7pt;" aria-label="Export (8 items)">Export</a>
+<a href="https://blog.4d.com/tag/formula/" class="tag-cloud-link tag-link-159 tag-link-position-17" style="font-size: 9.7pt;" aria-label="Formula (8 items)">Formula</a>
+<a href="https://blog.4d.com/tag/git/" class="tag-cloud-link tag-link-315 tag-link-position-18" style="font-size: 9.2pt;" aria-label="Git (7 items)">Git</a>
+<a href="https://blog.4d.com/tag/github/" class="tag-cloud-link tag-link-186 tag-link-position-19" style="font-size: 10.6pt;" aria-label="GitHub (10 items)">GitHub</a>
+<a href="https://blog.4d.com/tag/listbox/" class="tag-cloud-link tag-link-76 tag-link-position-20" style="font-size: 14pt;" aria-label="Listbox (23 items)">Listbox</a>
+<a href="https://blog.4d.com/tag/logs/" class="tag-cloud-link tag-link-164 tag-link-position-21" style="font-size: 9.7pt;" aria-label="Logs (8 items)">Logs</a>
+<a href="https://blog.4d.com/tag/mail/" class="tag-cloud-link tag-link-133 tag-link-position-22" style="font-size: 12.5pt;" aria-label="Mail (16 items)">Mail</a>
+<a href="https://blog.4d.com/tag/migration/" class="tag-cloud-link tag-link-124 tag-link-position-23" style="font-size: 8pt;" aria-label="Migration (5 items)">Migration</a>
+<a href="https://blog.4d.com/tag/mobility/" class="tag-cloud-link tag-link-22 tag-link-position-24" style="font-size: 17.1pt;" aria-label="Mobility (48 items)">Mobility</a>
+<a href="https://blog.4d.com/tag/objects/" class="tag-cloud-link tag-link-27 tag-link-position-25" style="font-size: 17.2pt;" aria-label="Objects (49 items)">Objects</a>
+<a href="https://blog.4d.com/tag/orda/" class="tag-cloud-link tag-link-110 tag-link-position-26" style="font-size: 17.4pt;" aria-label="ORDA (52 items)">ORDA</a>
+<a href="https://blog.4d.com/tag/pictures/" class="tag-cloud-link tag-link-41 tag-link-position-27" style="font-size: 11pt;" aria-label="Pictures (11 items)">Pictures</a>
+<a href="https://blog.4d.com/tag/preemptive/" class="tag-cloud-link tag-link-18 tag-link-position-28" style="font-size: 13.4pt;" aria-label="Preemptive (20 items)">Preemptive</a>
+<a href="https://blog.4d.com/tag/programming/" class="tag-cloud-link tag-link-69 tag-link-position-29" style="font-size: 22pt;" aria-label="Programming (151 items)">Programming</a>
+<a href="https://blog.4d.com/tag/project/" class="tag-cloud-link tag-link-225 tag-link-position-30" style="font-size: 16pt;" aria-label="Project (37 items)">Project</a>
+<a href="https://blog.4d.com/tag/scalability/" class="tag-cloud-link tag-link-71 tag-link-position-31" style="font-size: 12.5pt;" aria-label="Scalability (16 items)">Scalability</a>
+<a href="https://blog.4d.com/tag/security/" class="tag-cloud-link tag-link-37 tag-link-position-32" style="font-size: 13.2pt;" aria-label="Security (19 items)">Security</a>
+<a href="https://blog.4d.com/tag/session/" class="tag-cloud-link tag-link-245 tag-link-position-33" style="font-size: 8.7pt;" aria-label="Session (6 items)">Session</a>
+<a href="https://blog.4d.com/tag/silicon/" class="tag-cloud-link tag-link-229 tag-link-position-34" style="font-size: 9.7pt;" aria-label="Silicon (8 items)">Silicon</a>
+<a href="https://blog.4d.com/tag/source-control/" class="tag-cloud-link tag-link-141 tag-link-position-35" style="font-size: 13.6pt;" aria-label="Source control (21 items)">Source control</a>
+<a href="https://blog.4d.com/tag/speed/" class="tag-cloud-link tag-link-70 tag-link-position-36" style="font-size: 13pt;" aria-label="Speed (18 items)">Speed</a>
+<a href="https://blog.4d.com/tag/table/" class="tag-cloud-link tag-link-310 tag-link-position-37" style="font-size: 8.7pt;" aria-label="Table (6 items)">Table</a>
+<a href="https://blog.4d.com/tag/thread-safe/" class="tag-cloud-link tag-link-241 tag-link-position-38" style="font-size: 9.2pt;" aria-label="Thread safe (7 items)">Thread safe</a>
+<a href="https://blog.4d.com/tag/ui/" class="tag-cloud-link tag-link-9 tag-link-position-39" style="font-size: 19pt;" aria-label="UI (75 items)">UI</a>
+<a href="https://blog.4d.com/tag/user-and-group/" class="tag-cloud-link tag-link-305 tag-link-position-40" style="font-size: 8.7pt;" aria-label="User and group (6 items)">User and group</a>
+<a href="https://blog.4d.com/tag/user-experience/" class="tag-cloud-link tag-link-72 tag-link-position-41" style="font-size: 16.6pt;" aria-label="User Experience (43 items)">User Experience</a>
+<a href="https://blog.4d.com/tag/v19/" class="tag-cloud-link tag-link-180 tag-link-position-42" style="font-size: 20.7pt;" aria-label="v19 (111 items)">v19</a>
+<a href="https://blog.4d.com/tag/v19-r4/" class="tag-cloud-link tag-link-294 tag-link-position-43" style="font-size: 14.7pt;" aria-label="v19 R4 (27 items)">v19 R4</a>
+<a href="https://blog.4d.com/tag/v19-r5/" class="tag-cloud-link tag-link-300 tag-link-position-44" style="font-size: 13.4pt;" aria-label="v19 R5 (20 items)">v19 R5</a>
+<a href="https://blog.4d.com/tag/web/" class="tag-cloud-link tag-link-96 tag-link-position-45" style="font-size: 14.3pt;" aria-label="Web (25 items)">Web</a></div>
+</aside>
+		<aside id="recent-posts-2" class="widget widget_recent_entries sidebar-desktop">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="https://blog.4d.com/github-4d-awesome-list-call-for-contributions/">GitHub 4D Awesome List — Call for Contributions</a>
+									</li>
+											<li>
+					<a href="https://blog.4d.com/4d-and-git-from-beginner-to-expert/">4D and Git: From Beginner to Expert</a>
+									</li>
+											<li>
+					<a href="https://blog.4d.com/github-4d-depot/">How to browse GitHub to find all 4D projects</a>
+									</li>
+					</ul>
+
+		</aside><aside id="archives-3" class="widget widget_archive sidebar-desktop"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href='https://blog.4d.com/2022/06/'>June 2022</a></li>
+	<li><a href='https://blog.4d.com/2022/05/'>May 2022</a></li>
+	<li><a href='https://blog.4d.com/2022/04/'>April 2022</a></li>
+	<li><a href='https://blog.4d.com/2022/03/'>March 2022</a></li>
+	<li><a href='https://blog.4d.com/2022/01/'>January 2022</a></li>
+	<li><a href='https://blog.4d.com/2021/12/'>December 2021</a></li>
+			</ul>
+
+			</aside>			
+								<aside id="archives-2" class="widget widget_archive sidebar-mobile"><h3 class="widget-title">Archives</h3>		<label class="screen-reader-text" for="archives-dropdown-2">Archives</label>
+		<select id="archives-dropdown-2" name="archive-dropdown">
+			
+			<option value="">Select Month</option>
+				<option value='https://blog.4d.com/2022/06/'> June 2022 </option>
+	<option value='https://blog.4d.com/2022/05/'> May 2022 </option>
+	<option value='https://blog.4d.com/2022/04/'> April 2022 </option>
+	<option value='https://blog.4d.com/2022/03/'> March 2022 </option>
+	<option value='https://blog.4d.com/2022/01/'> January 2022 </option>
+	<option value='https://blog.4d.com/2021/12/'> December 2021 </option>
+
+		</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "archives-dropdown-2" );
+	function onSelectChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value !== '' ) {
+			document.location.href = this.options[ this.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onSelectChange;
+})();
+/* ]]> */
+</script>
+			</aside>			
+		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main .site-main -->
+</div><!-- #bg-main-->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+        <div class="header-bg">
+
+
+
+
+<a href="#" id='scroll-to-top' title="Scroll top" class="scrollTop"></a>
+		<div class="site-info">
+
+			<div id="text-3" class="widget widget_text group">			<div class="textwidget"><div class="block-newsletter"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+<a href="#" title="Subscribe to 4D Newsletter"  class="popup-button footer-newsletter" data-modal="popup-newsletter">Subscribe to 4D Newsletter</a></div> <br>© 2022 <a href="https://www.4d.com">4D SAS </a> - All rights reserved <br />
+<a href="https://us.4d.com/terms-and-conditions">Terms & Conditions </a> | <a href="https://us.4d.com/legal-notices">Legal Notices</a> | <a href="https://us.4d.com/data-policy">Data Policy</a> | <a href="https://blog.4d.com/cookie-policy/" target="_blank" rel="noopener">Cookie Policy</a> | <a href="#" class="popup-button" data-modal="popup">Contact us</a> |<a href="https://blog.4d.com/4d-guest-author-program/" > Write for us</a>       
+<br><br><br></div>
+		</div>
+						                        
+            <!-- &copy;  -->
+            		</div><!-- .site-info -->
+        </div>
+
+	</footer> <!-- #colophon .site-footer -->
+</div><!-- #page .hfeed .site -->
+<script type="text/javascript">
+
+jQuery(document).ready(function($){
+	$('#featured-slider').flexslider({ controlNav : false  , slideshow:false , slideshowSpeed:5000});
+	if ( $('#carousel-slider').width() < 720 ){
+		slideWidth = (($('#carousel-slider').width() )/2)  ;
+	}
+	else{
+		slideWidth = (($('#carousel-slider').width() )/3)  ;
+	}
+	$('#carousel-slider').flexslider({ controlNav : false, itemWidth: slideWidth,minItems:2,  maxItem:3, animation: 'slide', move:1 , slideshow:false , slideshowSpeed:5000});
+});
+
+</script>
+<div id='glt-footer'></div><script>function GoogleLanguageTranslatorInit() { new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages:'cs,en,fr,de,it,ja,pt,es', autoDisplay: false, multilanguagePage:true, gaTrack: true, gaId: 'UA-9073736-7'}, 'google_language_translator');}</script><script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/google-language-translator/js/scripts.js?ver=6.0.9' id='scripts-js'></script>
+<script type='text/javascript' src='//translate.google.com/translate_a/element.js?cb=GoogleLanguageTranslatorInit' id='scripts-google-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/themes/palmas/js/jquery.flexslider.min.js?ver=20120206' id='wpblog-flexslider-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/themes/palmas/js/upright.js?ver=20120206' id='upright-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/themes/palmas/js/jquery.fitvids.js?ver=20120206' id='fitvids-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/themes/palmas/js/script-claudie.js?ver=20120206' id='script-claudie-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/themes/palmas/js/script-marketo.js?ver=20120206' id='script-marketo-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-includes/js/wp-embed.min.js?ver=5.7.2' id='wp-embed-js'></script>
+<script type='text/javascript' id='search-filter-plugin-build-js-extra'>
+/* <![CDATA[ */
+var SF_LDATA = {"ajax_url":"https:\/\/blog.4d.com\/wp-admin\/admin-ajax.php","home_url":"https:\/\/blog.4d.com\/","sfid":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/search-filter-pro/public/assets/js/search-filter-build.js?ver=1.4.3' id='search-filter-plugin-build-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-content/plugins/search-filter-pro/public/assets/js/chosen.jquery.min.js?ver=1.4.3' id='search-filter-chosen-script-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-includes/js/jquery/ui/core.min.js?ver=1.12.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://blog.4d.com/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.12.1' id='jquery-ui-datepicker-js'></script>
+
+
+<div class="modal blur-effect" id="popup">
+            <div class="popup-content">
+                <div id="marketo_content_contact">
+            	<h3>Contact us</h3>
+            	<p>Got a question, suggestion or just want to get in touch with the 4D bloggers? Drop us a line!</p>
+                <script src="//app-e.marketo.com/js/forms2/js/forms2.min.js"></script>
+<form id="mktoForm_2479"></form>
+
+<p class='privacy'>* Your privacy is very important to us. Please click here to view our <a href='https://us.4d.com/data-policy'>Policy</a>
+</p>
+</div>
+<div class="close"></div>
+<div class="success_message" id="success_message_contact" style="display:none">
+<div id="success_content_contact"></div>
+<form id="mktoForm_2693"></form>
+</div>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+<div class="overlay"></div>
+
+<script>
+    MktoForms2.loadForm("//app-e.marketo.com", "531-MRT-468", 2479, function(form) { 
+         // Add an onSuccess handler
+         form.onSuccess(function(values, followUpUrl) {
+             var content = "<h3 style='color: #004289;margin: 20px 0px;'>Welcome to the 4D Community!</h3><p>You can update or change your email preferences at any time by clicking through our email communications.</p>";;
+             jQuery("#success_content_contact").html(content);
+             jQuery("#marketo_content_contact").hide(); 
+             jQuery("#success_message_contact").show(); 
+             jQuery("<h2>").hide(); 
+             return false;
+         }); 
+    });
+
+    MktoForms2.loadForm("//app-e.marketo.com", "531-MRT-468", 2693, function(form) {
+     form.onSuccess(function(values, followUpUrl) {
+     // Get the form's jQuery element and hide it
+        var vals = form.vals().optin;
+        form.getFormElem().hide();
+        var msg_newsletter_checked = "<h2 style='color: #004289;margin-bottom: 30px;'>Thank you!</h2><p><strong>Welcome to the 4D Community!</strong></p><p>At any time, you can update or change your email preferences at any time using through our email communications. </p>";
+        var msg_newsletter = "<h2 style='color: #004289;margin-bottom: 30px;'>Hello!</h2><p>Should you ever change your mind, and would like to receive valuable 4D information less frequently, please <a href='http://go.4d.com/preferences_center.html'  target='_blank' >click here.</a></p><p><strong>We hope to hear from you soon!</strong></p>";	
+        if(vals === 'yes'){
+            jQuery('#success_message_contact').html(msg_newsletter_checked);
+        }else{
+            jQuery('#success_message_contact').html(msg_newsletter);
+        }
+        return false;
+     });
+    });
+    MktoForms2.whenReady(function (form){
+     form.onValidate(function(){
+       var honeypot = form.vals().honeypot;
+       if(honeypot){
+         form.submittable(false);
+       }else{
+           form.submittable(true);
+        }
+     });
+    });
+</script>
+
+<div class="modal blur-effect" id="popup-newsletter">
+    <div class="popup-content">
+	<div id="marketo_content_newsletter">
+        <h3>Subscribe to 4D Newsletter</h3>
+        <form id="mktoForm_2780"></form>
+<script>
+MktoForms2.loadForm("//app-e.marketo.com", "531-MRT-468", 2780, function(form) { 
+	 // Add an onSuccess handler
+	 form.onSuccess(function(values, followUpUrl) {
+	 	var content = "<h3 style='color: #004289;margin: 20px 0px;'>Welcome to the 4D Community!</h3><p>You can update or change your email preferences at any time by clicking through our email communications.</p>";;
+	 	jQuery("#success_content_newsletter").html(content);
+	 	jQuery("#marketo_content_newsletter").hide(); 
+	 	jQuery("#success_message_newsletter").show(); 
+	 	jQuery("<h2>").hide(); 
+	 	return false;
+	 }); 
+});
+</script>
+<p class='privacy'>* Your privacy is very important to us. Please click here to view our <a href='https://us.4d.com/data-policy'>Policy</a>
+</p>
+</div>
+<div class="close"></div>
+<div class="success_message" id="success_message_newsletter" style="display:none">
+<div id="success_content_newsletter"></div>
+</div>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+			<div class="overlay"></div>
+            
+<script type="text/javascript" src="/wp-content/themes/palmas/js/popup.js"></script>
+</body>
+</html>https://blog.4d.com/css-media-query-for-a-dark-or-light-ui/
