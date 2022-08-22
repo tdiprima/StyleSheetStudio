@@ -28,3 +28,7 @@ element {
   color: #bddffe;
   color: #a2d2ff;
 }
+
+/* https://github.com/sole/sole.github.com/blob/master/munit.js/example.html#L48 */
+.boo { background: #faa; }
+.yay { background: #8f8; }
