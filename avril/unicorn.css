@@ -10,9 +10,10 @@
   color: #9013fe !important;
 }
 
+/* april-fools-2019 */
 body {
   font-family: 'Times New Roman', Times, serif;
-  background-image: url('https://cdn.sstatic.net/Img/april-fools-2019/so-tile.png?v=5922b5fd7715');
+  background-image: url('so-tile.png');
 }
 
 #content {
@@ -30,7 +31,7 @@ body {
 
 .container h5 {
   font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
-  font-style: uppercase;
+  text-transform: uppercase;
 }
 
 .container .bulletin-item-content a {
@@ -38,7 +39,7 @@ body {
 }
 
 .container .favicon {
-  background-image: url('https://cdn.sstatic.net/Img/april-fools-2019/broken-image.png?v=a2722a3b4e69');
+  background-image: url('broken-image.png');
   background-position: 0;
 }
 
@@ -90,11 +91,11 @@ body {
 
 #tm-scroll {
   -webkit-transform: translateX(100%);
-  -moz-transform: translateX(100%);
-  transform: translateX(100%);
+     -moz-transform: translateX(100%);
+          transform: translateX(100%);
   -webkit-animation: marquee 15s linear infinite;
-  -moz-animation: marquee 15s linear infinite;
-  animation: marquee 15s linear infinite;
+     -moz-animation: marquee 15s linear infinite;
+          animation: marquee 15s linear infinite;
 }
 
 @-moz-keyframes marquee {
@@ -120,14 +121,14 @@ body {
 @keyframes marquee {
   0% {
     -webkit-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-    transform: translateX(100%);
+       -moz-transform: translateX(100%);
+            transform: translateX(100%);
   }
 
   100% {
     -webkit-transform: translateX(-100%);
-    -moz-transform: translateX(-100%);
-    transform: translateX(-100%);
+       -moz-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
 }
 
@@ -201,19 +202,19 @@ body {
 }
 
 #tm-footer {
-  background-image: url('https://cdn.sstatic.net/Img/april-fools-2019/guestbook-tile.png?v=a3115b974309');
+  background-image: url('guestbook-tile.png');
 }
 
 #tm-footer-top {
   height: 30px;
   margin-bottom: 75px;
-  background-image: url('https://cdn.sstatic.net/Img/april-fools-2019/pencil-border.png?v=16dd39c85511');
+  background-image: url('pencil-border.png');
 }
 
 #tm-footer-bottom {
   height: 30px;
   margin-top: 75px;
-  background-image: url('https://cdn.sstatic.net/Img/april-fools-2019/footer-border.gif?v=2f26a0868ebf');
+  background-image: url('footer-border.gif');
 }
 
 .tm-form-container {
