@@ -1,5 +1,5 @@
 .ff-comic {
-  font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif !important;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif !important;
 }
 
 .ff-times {
@@ -7,29 +7,29 @@
 }
 
 .fc-fuschia {
-  color: #9013FE !important;
+  color: #9013fe !important;
 }
 
 body {
-  background-image: url("https://cdn.sstatic.net/Img/april-fools-2019/so-tile.png?v=5922b5fd7715");
   font-family: 'Times New Roman', Times, serif;
+  background-image: url('https://cdn.sstatic.net/Img/april-fools-2019/so-tile.png?v=5922b5fd7715');
 }
 
 #content {
-  border-width: 0 4px 0px 4px;
+  border-width: 0 4px 0 4px;
   border-style: solid;
-  border-color: #32E830;
+  border-color: #32e830;
 }
 
 .container h2,
 .container h4,
 .bulletin-title {
-  font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
-  color: #9013FE !important;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+  color: #9013fe !important;
 }
 
 .container h5 {
-  font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
   font-style: uppercase;
 }
 
@@ -38,8 +38,8 @@ body {
 }
 
 .container .favicon {
-  background-image: url("https://cdn.sstatic.net/Img/april-fools-2019/broken-image.png?v=a2722a3b4e69");
-  background-position: 0px;
+  background-image: url('https://cdn.sstatic.net/Img/april-fools-2019/broken-image.png?v=a2722a3b4e69');
+  background-position: 0;
 }
 
 .tm-unicorn-front {
@@ -67,33 +67,33 @@ body {
 }
 
 #question-header .question-hyperlink {
-  font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
   text-decoration: none;
 }
 
 #question-header a.s-btn {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  border: 3px outset blue;
   border-radius: 0;
   background: blue;
-  color: #fff;
-  text-decoration: none;
-  border: 3px outset blue;
-  cursor: pointer;
 }
 
 .question-hyperlink {
-  font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
 }
 
 #tm-header {
-  border-bottom: 4px solid #32E830;
+  border-bottom: 4px solid #32e830;
 }
 
 #tm-scroll {
-  -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
   transform: translateX(100%);
-  -moz-animation: marquee 15s linear infinite;
   -webkit-animation: marquee 15s linear infinite;
+  -moz-animation: marquee 15s linear infinite;
   animation: marquee 15s linear infinite;
 }
 
@@ -119,26 +119,26 @@ body {
 
 @keyframes marquee {
   0% {
-    -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
     transform: translateX(100%);
   }
 
   100% {
-    -moz-transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
     transform: translateX(-100%);
   }
 }
 
 #left-sidebar {
-  background: linear-gradient(0deg, #4395CF 0%, #9A54E3 100%);
-  border-left: 4px solid #32E830;
+  border-left: 4px solid #32e830;
+  background: linear-gradient(0deg, #4395cf 0%, #9a54e3 100%);
 }
 
 #left-sidebar a {
-  color: #F8E71C;
   text-decoration: underline;
+  color: #f8e71c;
 }
 
 #left-sidebar li,
@@ -153,8 +153,8 @@ body {
 }
 
 #mainbar a {
-  color: blue;
   text-decoration: underline;
+  color: blue;
 }
 
 .post-text {
@@ -164,7 +164,7 @@ body {
 .user-details,
 .comment-copy,
 .post-tag {
-  font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
 }
 
 .question-page #answers .answer,
@@ -173,21 +173,26 @@ body {
 }
 
 #wmd-preview {
-  font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
 }
 
 .community-bulletin {
-  border: 5px groove #EDE8E7 !important;
+  border: 5px groove #ede8e7 !important;
 }
 
 #tm-views {
-  display: inline-block;
-  background: #000;
-  color: #7FFF00;
-  padding: 5px 0px 5px 5px;
-  letter-spacing: 5px;
+  /* https://stackoverflow.com/questions/13751412/why-would-font-names-need-quotes#13752149 */
+  /*You can always put a specific font family name in quotes, double or single, so
+  Arial, "Arial", and 'Arial' are equivalent.
+  Only the CSS-defined generic font family names like sans-serif must be written
+  without quotes.*/
+  font-family: "Consolas", sans-serif;
   font-weight: bold;
-  font-family: "Consolas";
+  display: inline-block;
+  padding: 5px 0 5px 5px;
+  letter-spacing: 5px;
+  color: #7fff00;
+  background: #000;
 }
 
 .tm-fire {
@@ -196,29 +201,29 @@ body {
 }
 
 #tm-footer {
-  background-image: url("https://cdn.sstatic.net/Img/april-fools-2019/guestbook-tile.png?v=a3115b974309");
+  background-image: url('https://cdn.sstatic.net/Img/april-fools-2019/guestbook-tile.png?v=a3115b974309');
 }
 
 #tm-footer-top {
-  background-image: url("https://cdn.sstatic.net/Img/april-fools-2019/pencil-border.png?v=16dd39c85511");
   height: 30px;
   margin-bottom: 75px;
+  background-image: url('https://cdn.sstatic.net/Img/april-fools-2019/pencil-border.png?v=16dd39c85511');
 }
 
 #tm-footer-bottom {
-  background-image: url("https://cdn.sstatic.net/Img/april-fools-2019/footer-border.gif?v=2f26a0868ebf");
   height: 30px;
   margin-top: 75px;
+  background-image: url('https://cdn.sstatic.net/Img/april-fools-2019/footer-border.gif?v=2f26a0868ebf');
 }
 
 .tm-form-container {
-  background: #9013FE;
   border: 3px inset #fcfcfc;
+  background: #9013fe;
 }
 
 .tm-comments {
-  border: 3px inset #fcfcfc;
   height: 350px;
+  border: 3px inset #fcfcfc;
 }
 
 .tm-comment-input {
