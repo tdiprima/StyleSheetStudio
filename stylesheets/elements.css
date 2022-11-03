@@ -57,3 +57,20 @@ a.earth {
 a:hover.earth {
   background-color: #E7FADE;
 }
+
+/* geen */
+.ok {
+  color: rgb(160, 255, 109);
+}
+
+/* Violet Eggplant rgba(166, 38, 164, 1) */
+.markdown-content code {
+  font-size: .8rem;
+  font-family: Menlo, Courier, monospace;
+  color: #a626a4;
+}
+
+/* Fuchsia Pink #db61d9 */
+.markdown-content code {
+  color: rgb(219, 97, 217);
+}
