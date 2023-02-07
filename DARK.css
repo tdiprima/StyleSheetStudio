@@ -6,6 +6,8 @@
 /*https://dev.to/laurilllll/how-to-create-dark-mode-using-only-css-2cb4*/
 /*https://blog.4d.com/css-media-query-for-a-dark-or-light-ui/*/
 
+/* Nice gray: #d9d9d9 */
+
 :root {
   color-scheme: light dark;
 }
