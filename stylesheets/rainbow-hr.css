@@ -1,0 +1,15 @@
+hr {
+    height: 4px;
+    margin: 40px;
+    border: none;
+}
+
+hr.rainbow2 {
+    background: #f00;
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f00), color-stop(25%,#ff0), color-stop(50%,#0f0), color-stop(75%,#0ff), color-stop(100%,#00f));
+    background: -webkit-linear-gradient(-45deg, #f00 0%,#ff0 25%,#0f0 50%,#0ff 75%,#00f 100%);
+    background:    -moz-linear-gradient(-45deg, #f00 0%, #ff0 25%, #0f0 50%, #0ff 75%, #00f 100%);
+    background:      -o-linear-gradient(-45deg, #f00 0%,#ff0 25%,#0f0 50%,#0ff 75%,#00f 100%);
+    background:     -ms-linear-gradient(-45deg, #f00 0%,#ff0 25%,#0f0 50%,#0ff 75%,#00f 100%);
+    background:         linear-gradient(-45deg, #f00 0%,#ff0 25%,#0f0 50%,#0ff 75%,#00f 100%);
+}
