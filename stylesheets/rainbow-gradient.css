@@ -1,0 +1,39 @@
+/* https://www.smashingmagazine.com/2021/06/web-workers-2021/ */
+:root {
+  --rainbow-gradient: linear-gradient(-90deg, #adfbda 0, #35c3ff 30%, #fda399 50%, #76d880 70%, #ebf38b 90%, #adfbda 100%);
+  --text-shadow-1px: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  --article-body-color: #e5e5e5;
+  --article-background-color: linear-gradient(-45deg, #162c35 70%, #0c252f 100%);
+}
+
+body {
+  font-family: Mija, -apple-system, BlinkMacSystemFont, Roboto, roboto slab, droid serif, segoe ui, system-ui, Arial, sans-serif;
+  color: var(--article-body-color, #e5e5e5);
+  background: var(--article-background-color, #162c35);
+}
+
+h1 {
+  background-image: var(--rainbow-gradient, #fff);
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+  background-size: 100%;
+  text-shadow: none !important;
+  -webkit-text-fill-color: transparent;
+     -moz-text-fill-color: transparent;
+  filter: drop-shadow(0 0 2rem #000);
+}
+
+.article-header--title {
+  text-shadow: var(--text-shadow-1px, 1px 1px 1px rgba(0, 0, 0, .3));
+}
+
+a {
+  padding: 7px 0;
+  color: #006fc6;
+  background-color: transparent;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
+  text-decoration-line: underline;
+}
