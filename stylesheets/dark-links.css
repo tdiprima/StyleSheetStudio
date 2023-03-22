@@ -1,0 +1,30 @@
+/* https://www.makeuseof.com/tag/mac-terminal-commands-cheat-sheet/ */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+
+    color: silver;
+    background-color: black;
+}
+
+/* a { color: hotpink; } */
+
+/* unvisited link */
+a:link {
+    color: #39ff14;
+}
+
+/* visited link */
+a:visited {
+    color: #231ca5;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
