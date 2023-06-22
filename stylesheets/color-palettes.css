@@ -19,3 +19,12 @@ os-dark {
   color: #fbfbfe;
   background-color: #1c1b22;
 }
+
+.geen {
+  /* from stylesheet */
+  color: #e8fffa;
+  color: #84ead4;
+  /* picked */
+  color: #e3fffa;
+  color: #59edd3;
+}
