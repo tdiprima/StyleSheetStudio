@@ -13,3 +13,8 @@ hr.rainbow2 {
     background:     -ms-linear-gradient(-45deg, #f00 0%,#ff0 25%,#0f0 50%,#0ff 75%,#00f 100%);
     background:         linear-gradient(-45deg, #f00 0%,#ff0 25%,#0f0 50%,#0ff 75%,#00f 100%);
 }
+
+/*<hr class="rainbow2">*/
+
+/* SMOOSH IT */
+hr{margin: 40px;border: none;height: 4px;}hr.rainbow2{background: #ff0000;background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ff0000), color-stop(25%,#ffff00), color-stop(50%,#00ff00), color-stop(75%,#00ffff), color-stop(100%,#0000ff));background: -webkit-linear-gradient(-45deg, #ff0000 0%,#ffff00 25%,#00ff00 50%,#00ffff 75%,#0000ff 100%);background: -moz-linear-gradient(-45deg, #ff0000 0%, #ffff00 25%, #00ff00 50%, #00ffff 75%, #0000ff 100%);background: -o-linear-gradient(-45deg, #ff0000 0%,#ffff00 25%,#00ff00 50%,#00ffff 75%,#0000ff 100%);background: -ms-linear-gradient(-45deg, #ff0000 0%,#ffff00 25%,#00ff00 50%,#00ffff 75%,#0000ff 100%);background: linear-gradient(-45deg, #ff0000 0%,#ffff00 25%,#00ff00 50%,#00ffff 75%,#0000ff 100%);}
