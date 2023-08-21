@@ -1,131 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Wicked 🧙🏻‍♀️</title>
+  <base href="http://129.49.255.69:8888/">
+</head>
 <style>
   /* cool transform that I found */
   @-webkit-keyframes slide-in-from-top {
-  0% {
-    transform: translateY(-100%);
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
-  100% {
-    transform: translateY(0);
+
+  @keyframes slide-in-from-top {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
-}
-@keyframes slide-in-from-top {
-  0% {
-    transform: translateY(-100%);
+
+  /* wicket crap */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
   }
-  100% {
-    transform: translateY(0);
+
+  /* change this color */
+  .navbar {
+    overflow: hidden;
+
+    transition: opacity .2s linear;
+    transition: background-color .2s linear;
+    -webkit-animation: 1s ease-out 0s 1 slide-in-from-top;
+    animation: 1s ease-out 0s 1 slide-in-from-top;;
+
+    background-color: #666;
   }
-}
 
-/* wicket crap */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+  .navbar a {
+    font-size: 16px;
+    float: left;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+  }
 
-/* change this color */
-.navbar {
-  overflow: hidden;
+  .dropdown {
+    float: left;
+    overflow: hidden;
+    transition: opacity .2s linear;
+  }
 
-  transition: opacity .2s linear;
-  transition: background-color .2s linear;
-  -webkit-animation: 1s ease-out 0s 1 slide-in-from-top;
-      animation: 1s ease-out 0s 1 slide-in-from-top;;
+  .dropdown .dropbtn {
+    font-family: inherit;
+    font-size: 16px;
+    margin: 0;
+    padding: 14px 16px;
+    transition: opacity .2s linear;
+    color: white;
+    border: none;
+    outline: none;
+    background-color: inherit;
+  }
 
-  background-color: #666;
-}
+  /* change that color */
+  .navbar a:hover,
+  .dropdown:hover .dropbtn {
+    background-color: #537895;
+  }
 
-.navbar a {
-  font-size: 16px;
-  float: left;
-  padding: 14px 16px;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-}
+  .dropdown-content {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    min-width: 160px;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+  }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-  transition: opacity .2s linear;
-}
+  .dropdown-content a {
+    display: block;
+    float: none;
+    padding: 12px 16px;
+    text-align: left;
+    text-decoration: none;
+    color: black;
+  }
 
-.dropdown .dropbtn {
-  font-family: inherit;
-  font-size: 16px;
-  margin: 0;
-  padding: 14px 16px;
-  transition: opacity .2s linear;
-  color: white;
-  border: none;
-  outline: none;
-  background-color: inherit;
-}
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
 
-/* change that color */
-.navbar a:hover,
-.dropdown:hover .dropbtn {
-  background-color: #537895;
-}
-
-.dropdown-content {
-  position: absolute;
-  z-index: 1;
-  display: none;
-  min-width: 160px;
-  background-color: #f9f9f9;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
-}
-
-.dropdown-content a {
-  display: block;
-  float: none;
-  padding: 12px 16px;
-  text-align: left;
-  text-decoration: none;
-  color: black;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 </style>
 
 <!-- OS LIGHT & DARK MODE -->
 <!-- SYSTEM -->
 <style>
-:root {
-  color-scheme: light dark;
-}
+  :root {
+    color-scheme: light dark;
+  }
 </style>
+<body>
 
 <div wicket:id="menu">
   <wicket:panel xmlns:wicket="http://wicket.apache.org">
-    <div id="main-header" class="navbar">
-      <a wicket:id="home" href="http://129.49.255.69:8888/gui">Home</a>
-      <a wicket:id="security" href="http://129.49.255.69:8888/gui/adminme">Security</a>
+    <div class="navbar" id="main-header">
+      <a href="gui" wicket:id="home">Home</a>
+      <a href="gui/adminme" wicket:id="security">Security</a>
       <div class="dropdown">
         <button class="dropbtn">Collections<i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a wicket:id="collections" href="http://129.49.255.69:8888/gui/collections">Collections</a>
-          <a wicket:id="images" href="http://129.49.255.69:8888/gui/ListImages">Images</a>
+          <a href="gui/collections" wicket:id="collections">Collections</a>
+          <a href="gui/ListImages" wicket:id="images">Images</a>
         </div>
       </div>
-      <a wicket:id="sparql" href="http://129.49.255.69:8888/gui/sparql">SPARQL</a>
-      <a wicket:id="account" href="http://129.49.255.69:8888/gui/accountpage">Account</a>
+      <a href="gui/sparql" wicket:id="sparql">SPARQL</a>
+      <a href="gui/accountpage" wicket:id="account">Account</a>
       <div class="dropdown">
         <button class="dropbtn">Help<i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a wicket:id="about" href="http://129.49.255.69:8888/gui/about">About</a>
+          <a href="gui/about" wicket:id="about">About</a>
         </div>
       </div>
-      <a wicket:id="logout"
-         href="http://129.49.255.69:8888/auth/realms/Halcyon/protocol/openid-connect/logout?redirect_uri=http://129.49.255.69:8888/auth/realms/Halcyon/account/">Logout</a>
+      <a href="auth/realms/Halcyon/protocol/openid-connect/logout?redirect_uri=auth/realms/Halcyon/account/"
+         wicket:id="logout">Logout</a>
     </div>
   </wicket:panel>
 </div>
+
+</body>
+</html>
