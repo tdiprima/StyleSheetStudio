@@ -1,6 +1,4 @@
-# Vibrant Cannon
-
-_Named after the terminal theme._
+# StyleSheetStudio
 
 A wide range of styles and possibilities.
 
